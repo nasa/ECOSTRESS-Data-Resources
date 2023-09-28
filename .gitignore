@@ -1,1 +1,9 @@
-*.ipynb_checkpoints
+*.h5
+*.png
+*.tif
+_MACOSX*
+__MACOSX/
+tutorial_aj_notes/
+tutorial_aj_notes.zip
+.ipynb_checkpoints/
+img/
