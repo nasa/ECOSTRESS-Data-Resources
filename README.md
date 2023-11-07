@@ -11,6 +11,7 @@ The ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station ([ECOSTR
 ECOSTRESS addresses three overarching science questions: How is the terrestrial biosphere responding to changes in water availability? How do changes in diurnal vegetation water stress impact the global carbon cycle? Can agricultural vulnerability be reduced through advanced monitoring of agricultural water consumptive use and improved drought estimation? ECOSTRESS uses a multispectral thermal infrared radiometer to measure the surface temperature. The radiometer obtains detailed images of the Earth’s surface at ~70 m spatial resolution that can provide information on the temperature of an individual farmer’s field. Learn more on the [ECOSTRESS website](https://ecostress.jpl.nasa.gov/).
 
 ECOSTRESS Data Products are distributed by the [LP DAAC](https://lpdaac.usgs.gov/). Learn more about ECOSTRESS data products from [ECOSTRESS Product Pages](https://lpdaac.usgs.gov/product_search/?query=ECOSTRESS&status=Operational&view=cards&sort=title&page=1&per_page=30) and search for and download ECOSTRESS data products using [NASA EarthData Search](https://search.earthdata.nasa.gov/search?q=ECOSTRESS) or programmatically using NASA's [Common Metadata Repository](https://cmr.earthdata.nasa.gov/search)(CMR).
+
 ---
 
 ## Prerequisites/Setup Instructions  
@@ -21,10 +22,10 @@ Instructions for setting up a compatible environment for working with ECOSTRESS 
 ---
 ## Getting Started  
 
-Clone or download the [AppEEARS-Data-Resources repository](https://github.com/nasa/AppEEARS-Data-Resources).  
+Clone or download the [ECOSTRESS-Data-Resources repository](https://github.com/nasa/ECOSTRESS-Data-Resources).  
 
-- [Download](https://github.com/nasa/AppEEARS-Data-Resources/archive/refs/heads/main.zip)  
-- To clone the repository, type `git clone https://github.com/nasa/AppEEARS-Data-Resources.git` in the command line.  
+- [Download](https://github.com/nasa/ECOSTRESS-Data-Resources/archive/refs/heads/main.zip)  
+- To clone the repository, type `git clone https://github.com/nasa/ECOSTRESS-Data-Resources.git` in the command line.  
 
 ---
 ## Repository Contents
@@ -55,6 +56,6 @@ Email: LPDAAC@usgs.gov
 Voice: +1-866-573-3222  
 Organization: Land Processes Distributed Active Archive Center (LP DAAC)¹  
 Website: <https://lpdaac.usgs.gov/>  
-Date last modified: 09-27-2023  
+Date last modified: 11-7-2023  
 
 ¹Work performed under USGS contract G15PD00467 for NASA contract NNG14HH33I.  
