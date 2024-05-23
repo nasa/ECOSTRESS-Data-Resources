@@ -43,6 +43,7 @@ Content in this repository includes Python tutorials, how-tos, scripts, defined 
 ## Helpful Links    
 
 + [ECOSTRESS Collection Overview](https://lpdaac.usgs.gov/data/get-started-data/collection-overview/missions/ecostress-overview/)
++ [2023 ECOSTRESS Science and Applications Team Meeting Workshop Recording](https://ecostress.jpl.nasa.gov/downloads/science_team_meetings/2023/workshopvid.mp4)
 + [ECOSTRESS Website](https://ecostress.jpl.nasa.gov/)
 + [AppEEARS Website](https://appeears.earthdatacloud.nasa.gov/)
 + [LP DAAC Website](https://lpdaac.usgs.gov/)
