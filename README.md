@@ -48,6 +48,7 @@ Content in this repository includes Python tutorials, how-tos, scripts, defined 
 + [AppEEARS Website](https://appeears.earthdatacloud.nasa.gov/)
 + [LP DAAC Website](https://lpdaac.usgs.gov/)
 + [LP DAAC GitHub](https://github.com/nasa/LPDAAC-Data-Resources)
++ [Chapman University teaching materials and tutorials on how to access and visualize ECOSTRESS data](https://www.observingearthfromabove.com/)
 
 ---
 
