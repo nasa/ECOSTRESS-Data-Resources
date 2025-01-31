@@ -15,17 +15,70 @@ import pandas as pd
 import xarray as xr
 import argparse
 import os
-from dask.distributed import Client
-from dask import delayed
-import dask.array as da
+# from dask.distributed import Client
+# from dask import delayed
+# import dask.array as da
 from colorama import Fore, Back, Style
 import multiprocessing
 import warnings
+from tqdm import tqdm  # Import tqdm for the progress bar
+
 
 # Suppress the specific UserWarning
 warnings.filterwarnings("ignore", message="Creating scratch directories is taking a surprisingly long time.")
 
 # ----------------------------------USER-DEFINED VARIABLES--------------------------------------- #
+def get_link(id):
+    """This function extract the associated ECO_L1B_GEO URL using date and time information."""
+    attempts = 0
+    url = ''
+    while attempts < 3:
+        try:
+            response = earthaccess.search_data(short_name="ECO_L1B_GEO",version='002',granule_name = f'*{id}*')
+            # print(response)
+            # get the L1B_GEO access URL
+            url = [granule.data_links(access="external") for granule in response]
+            break
+        except:
+            attempts += 1     
+    return(url)
+
+def file_geolocation(url):
+    """This function extract the GeolocationAccuracyQA flag from file metadata using xarray."""
+    fs = earthaccess.get_fsspec_https_session()
+    fp = fs.open(url)
+    l1geo = xr.open_dataset(fp, engine='h5netcdf', group='L1GEOMetadata')
+    try:
+        label = l1geo['GeolocationAccuracyQA'].data.item()
+    except:
+        label = 'missing'
+    return(label)
+
+def dmrpp_geolocation(url):
+    """This function extract the GeolocationAccuracyQA flag from .dmrpp metadata file."""
+    try:
+        response = requests.get(url)
+        # print(response.raise_for_status())
+        # Decode using ISO-8859-1
+        xml_content = response.content.decode("ISO-8859-1")
+        # Parse XML
+        root = ET.fromstring(xml_content)
+
+        for group in root.iter():
+            if "Group" in group.tag:
+                group_name = group.attrib.get("name", "Unnamed Group")
+                if group_name == "L1GEOMetadata":
+                    for elem in group.iter():
+                        if "String" in elem.tag:
+                            string = elem.attrib.get("name", "Unnamed Attribute")
+                            if "GeolocationAccuracyQA" in string and "GeolocationAccuracyQAExplanation" not in string:
+                                for e in elem.iter():
+                                    encoded_value = e.text.strip()  # Remove extra spaces/newlines
+                                    label = base64.b64decode(encoded_value).decode("utf-8", errors="ignore")
+    except:
+        label = 'failed'
+    return(label)  
+  
 
 if __name__ == "__main__":
     multiprocessing.freeze_support()
@@ -65,58 +118,69 @@ if __name__ == "__main__":
     # --------------------------------AUTHENTICATION CONFIGURATION----------------------------------- #
     # AUthenticate using earthaccess.login function. 
 
-    earthaccess.login(persist = True) 
-    fs = earthaccess.get_fsspec_https_session()
+    auth = earthaccess.login(persist = True) 
+    auth.refresh_tokens()
+    # fs = earthaccess.get_fsspec_https_session()
     print(Fore.GREEN + 'Please note: If you just entered your Earthdata Login credentials, your username and password are now stored in a .netrc file located in your home directory on this system.')    
     print(Style.RESET_ALL)
 
     # ------------------------------------------------------------------------------- #
-
-    def get_geolocation_label(fs, granID_db, f):
+    def get_geolocation_label(granID_db, f):
         # print(f'Working on {f}')
-        if 'ECOv002_' in f:
-            id = [f for f in f.rsplit('/', 1)[1].rsplit('_') if len(f)==15 and '.' not in f][0]
-            
-            if id in list(granID_db['id']):
-                pr = granID_db[granID_db['id'] == id].iloc[0]
-                row =  pd.DataFrame({'granule': [f],'L1B_GEO': pr['L1B_GEO'], 'id': [id], 
-                                    'GeolocationAccuracyQA': pr['GeolocationAccuracyQA']}, index=[0])
-            else:
-                response = earthaccess.search_data(short_name="ECO_L1B_GEO",version='002',granule_name = f'*{id}*')
-                # get the L1B_GEO access URL
-                url = [out['URL'] for out in response[0]['umm']['RelatedUrls'] if out['Type']  == 'GET DATA']
-                fp = fs.open(url[0])
-                l1geo = xr.open_dataset(fp, engine='h5netcdf', group='L1GEOMetadata')
-                try:
-                    label = l1geo['GeolocationAccuracyQA'].data.item()
-                except:
-                    label = 'missing'
- 
-                row =  pd.DataFrame({'granule': [f],'L1B_GEO': [url[0].rsplit('/')[-1]], 'id': [id], 'GeolocationAccuracyQA': [label] })
-        else:
-            row =  pd.DataFrame()
         
+        id = [f for f in f.rsplit('/', 1)[1].rsplit('_') if len(f)==15 and '.' not in f][0]
+        # print(id)
+        if id in list(granID_db['id']):
+            pr = granID_db[granID_db['id'] == id].iloc[0]
+            row =  pd.DataFrame({'granule': [f],'L1B_GEO': pr['L1B_GEO'], 'id': [id], 
+                                    'GeolocationAccuracyQA': pr['GeolocationAccuracyQA'], 
+                                    'note': pr['note']}, index=[0])       
+        else:       
+            if 'ECOv002_' in f:
+                url = get_link(id)
+                if url:
+                    h5_link = [l for l in url[0] if l.endswith('.h5')][0]     
+                    # print(h5_link)
+                    dmrpp_link = f'{h5_link}.dmrpp'
+                    label = dmrpp_geolocation(dmrpp_link)
+                    if label == 'failed':
+                        label = file_geolocation(h5_link)
+                    # print(label)    
+                    row =  pd.DataFrame({'granule': [f],'L1B_GEO': [h5_link.rsplit('/')[-1]], 'id': [id], 
+                                         'GeolocationAccuracyQA': [label], 'note': '' })
+                else:
+                    # print(f'Failed to access ECO_L1B_GEO granule.')   
+                    row =  pd.DataFrame({'granule': [],'L1B_GEO': [], 'id': [], 'GeolocationAccuracyQA': [], 
+                                         'note': 'Failed to access ECO_L1B_GEO granule' })   
+            else:
+                print(f'{f} is not associated to the ECOSTRESS version 2 collections.') 
+                row = pd.DataFrame() 
         return(row)
+   
+   
         
     # -----------------------------------------GET THE LIST OF GRANULE ID(S)-------------------------------------- #
     # Initialize an empty DataFrame for granule data
-    granID_db = pd.DataFrame(columns=['granule','L1B_GEO','id' ,'GeolocationAccuracyQA'])
+    granID_db = pd.DataFrame(columns=['granule','L1B_GEO','id' ,'GeolocationAccuracyQA', 'note'])
 
-    # # Run the script without dask
-    # for f in fileList:
-    #     granID_db = get_geolocation_label(fs, granID_db, f) 
+    # Run the script without dask
+
+    # Add a progress bar to the loop
+    for f in tqdm(fileList, desc="Processing files", unit="file"):
+        if  f:
+            row_db = get_geolocation_label(granID_db, f) 
+            granID_db = pd.concat([granID_db, row_db], ignore_index=True)
 
     # ------------------------------------------------------------------------------------------------------------- #
-    # Set up Dask client
-    client = Client(dashboard_address=":0")
-
-    # Set up parallel tasks
-    get_geolocation_label_parallel = delayed(get_geolocation_label)
-    tasks = [get_geolocation_label_parallel(fs, granID_db, f) for f in fileList]
-
-    # Perform computations and combine results
-    results = da.compute(*tasks)
-    granID_db = pd.concat(results, ignore_index=True)
+    # # Set up Dask client
+    # with Client() as client: #dashboard_address=":0"
+    #     get_geolocation_label_parallel = delayed(get_geolocation_label)
+    #     tasks = [get_geolocation_label_parallel(granID_db, f) for f in fileList if f]
+        
+    #     results = da.compute(*tasks)
+    #     print(results)
+      
+    #     granID_db = pd.concat(results, ignore_index=True)
 
     # -----------------------------------------SAVE THE DATABASE AS AN OUTPUT-------------------------------------- #
     # Remove 'id' column if it exists
