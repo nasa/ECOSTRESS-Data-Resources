@@ -29,8 +29,10 @@ This script works with all the ECOSTRESS version 2 data products.
 If you do not have an Environment Manager installed, we recommend [mamba](https://mamba.readthedocs.io/en/latest/) to manage Python packages. Details instruction on how to install an environment manager can be found [here](https://github.com/nasa/LPDAAC-Data-Resources/blob/main/setup/setup_instructions_python.md). Once you have it installed, type the following in your preferred command line interface (command prompt, terminal, cmder, etc.) to create a compatible environment.
 
 ```
-mamba create -n ecostress_geo python=3.9 earthaccess dask xarray h5netcdf 
+mamba create -n ecostress_geo python=3.12 earthaccess xarray h5netcdf 
 ```
+**This script is tested using `earthaccess` version 0.13.**
+
 **If you are using conda, replace the "mamba" with "conda" and be patient.**
 
 Instruction for setting up a compatible environment for all LP DAAC Python resources is available at: <https://github.com/nasa/LPDAAC-Data-Resources/blob/main/setup/setup_instructions_python.md>

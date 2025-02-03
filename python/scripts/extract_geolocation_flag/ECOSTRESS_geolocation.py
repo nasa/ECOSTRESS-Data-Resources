@@ -6,7 +6,7 @@ from ECOSTRESS L1B_GEO file level metadata.
 -------------------------------------------------------------------------------                        
 Authors: Mahsa Jami, Erik Bolch
 Contact: lpdaac@usgs.gov                                                   
-Last Updated: 2024-12-27                                    
+Last Updated: 2025-02-03                                    
 ===============================================================================
 """
 # Import necessary packages
@@ -15,9 +15,6 @@ import pandas as pd
 import xarray as xr
 import argparse
 import os
-# from dask.distributed import Client
-# from dask import delayed
-# import dask.array as da
 from colorama import Fore, Back, Style
 import multiprocessing
 import warnings
@@ -119,8 +116,6 @@ if __name__ == "__main__":
     # AUthenticate using earthaccess.login function. 
 
     auth = earthaccess.login(persist = True) 
-    auth.refresh_tokens()
-    # fs = earthaccess.get_fsspec_https_session()
     print(Fore.GREEN + 'Please note: If you just entered your Earthdata Login credentials, your username and password are now stored in a .netrc file located in your home directory on this system.')    
     print(Style.RESET_ALL)
 
@@ -163,24 +158,13 @@ if __name__ == "__main__":
     # Initialize an empty DataFrame for granule data
     granID_db = pd.DataFrame(columns=['granule','L1B_GEO','id' ,'GeolocationAccuracyQA', 'note'])
 
-    # Run the script without dask
+    # Run the script
 
     # Add a progress bar to the loop
     for f in tqdm(fileList, desc="Processing files", unit="file"):
         if  f:
             row_db = get_geolocation_label(granID_db, f) 
             granID_db = pd.concat([granID_db, row_db], ignore_index=True)
-
-    # ------------------------------------------------------------------------------------------------------------- #
-    # # Set up Dask client
-    # with Client() as client: #dashboard_address=":0"
-    #     get_geolocation_label_parallel = delayed(get_geolocation_label)
-    #     tasks = [get_geolocation_label_parallel(granID_db, f) for f in fileList if f]
-        
-    #     results = da.compute(*tasks)
-    #     print(results)
-      
-    #     granID_db = pd.concat(results, ignore_index=True)
 
     # -----------------------------------------SAVE THE DATABASE AS AN OUTPUT-------------------------------------- #
     # Remove 'id' column if it exists
