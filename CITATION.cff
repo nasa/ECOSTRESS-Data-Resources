@@ -5,15 +5,15 @@ message: >-
   we would appreciate an appropriate citation.
 type: software
 authors:
-- given-names: Mahsa
+  - given-names: Mahsa
     family-names: Jami
     affiliation: >-
       KBR, Inc., Contractor to the U.S. Geological Survey,
       Earth Resources Observation and Science Center,
       National Aeronautics and Space Administration Land
       Processes Distributed Active Archive Center
-    orcid: 'https://orcid.org/0000-0002-3594-3004'
-- given-names: Erik A
+    orcid: 'https://orcid.org/0000-0002-3594-3004' 
+  - given-names: Erik A
     family-names: Bolch
     affiliation: >-
       KBR, Inc., Contractor to the U.S. Geological Survey,
@@ -21,14 +21,6 @@ authors:
       National Aeronautics and Space Administration Land
       Processes Distributed Active Archive Center
     orcid: 'https://orcid.org/0000-0003-2470-4048'
-  - given-names: Aaron M
-    family-names: Friesz
-    affiliation: >-
-      KBR, Inc., Contractor to the U.S. Geological Survey,
-      Earth Resources Observation and Science Center,
-      National Aeronautics and Space Administration Land
-      Processes Distributed Active Archive Center
-    orcid: 'https://orcid.org/0000-0003-4096-3824'
   - given-names: Cole K
     family-names: Krehbiel
     affiliation: >-
@@ -37,6 +29,14 @@ authors:
       U.S. Geological Survey, Earth Resources 
       Observation and Science Center
     orcid: 'https://orcid.org/0000-0003-2645-3449'
+  - given-names: Aaron M
+    family-names: Friesz
+    affiliation: >-
+      KBR, Inc., Contractor to the U.S. Geological Survey,
+      Earth Resources Observation and Science Center,
+      National Aeronautics and Space Administration Land
+      Processes Distributed Active Archive Center
+    orcid: 'https://orcid.org/0000-0003-4096-3824'
 repository-code: 'https://github.com/nasa/EMIT-Data-Resources'
 abstract: >-
   This repository contains guides and Jupyter Notebooks to
