@@ -5,7 +5,7 @@ message: >-
   we would appreciate an appropriate citation.
 type: software
 authors:
-  - given-names: Mahsa
+- given-names: Mahsa
     family-names: Jami
     affiliation: >-
       KBR, Inc., Contractor to the U.S. Geological Survey,
