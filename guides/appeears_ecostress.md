@@ -21,7 +21,7 @@ In this example we are interested in the [ECOSTRESS LSTE](https://doi.org/10.506
 5. For area sample, you can select your **output file format**. You also have an option to **reproject** all your layers to another coordinate reference system.   
 6. Now you can **submit**.   
 
-![*Figure caption: Extract area and point sample for ECOSTRESS data available in AWS cloud in AppEEARS*](../img/AppEEARS_point&area.png) 
+![*Figure caption: Extract area and point sample for ECOSTRESS data available in AWS cloud in AppEEARS*](../img/AppEEARS_point_area.png) 
 
 Once your request is complete, you can **View** and **Download** your results from the Explore Requets page. 
 
