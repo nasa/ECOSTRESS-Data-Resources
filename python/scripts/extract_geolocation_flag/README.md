@@ -92,6 +92,6 @@ python C:\User\Downloads\DAACDataDownload.py  -dir C:\User\downloads -f https:/
 **Voice:** +1-866-573-3222  
 **Organization:** Land Processes Distributed Active Archive Center (LP DAAC)  
 **Website:** <https://lpdaac.usgs.gov/>  
-**Date last modified:** 11-21-2022  
+**Date last modified:** 02-03-2025  
 
 <sup>1</sup>LP DAAC Work performed under NASA contract NNG14HH33I.
