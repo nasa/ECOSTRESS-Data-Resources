@@ -10,19 +10,19 @@ Go to Earthdata Search <https://search.earthdata.nasa.gov> and use your Earthdat
 
 Use the search box in the upper left to type key words. In this example we are interested in the [ECOSTRESS LSTE](https://search.earthdata.nasa.gov/search/granules?p=C2076090826-LPCLOUD&pg[0][v]=f&pg[0][gsk]=-start_date&q=ECOSTRESS&ff=Available%20from%20AWS%20Cloud&tl=1666964694.567!3!!&lat=20.601562500000004&long=-71.3671875) which is managed by the LP DAAC and made available from the NASA Earthdata Cloud archive hosted in AWS cloud.  
 
-Type **ECOSTRESS** in the search bar Click on the **"Available from AWS Cloud"** filter option on the left.  
+Type **ECOSTRESS** in the search bar, then click on the **"Available from AWS Cloud"** filter option on the left.  
 
 ![*Figure caption: Search for ECOSTRESS data available in AWS cloud in Earthdata Search portal*](../img/eds_collection_search_ECOSTRESS.png)  
 
-Let's refine our search further. Let's search for `ECOSTRESS ECO_L2T_LSTE` in the search box. A single Earthdata Seach Collection is returned.  
+Let's refine our search further. Now, let's search for `ECOSTRESS ECO_L2T_LSTE` in the search box. A single Earthdata Search Collection is returned.  
 
-We can click on the (i) icon for the dataset to read more details, including the **dataset shortname** (helpful for programmatic workflows) just below the dataset name; here `ECO_L2T_LSTE`.  
+Click on the (i) icon for the dataset to read more details, including the **dataset shortname** (helpful for programmatic workflows) just below the dataset name; here `ECO_L2T_LSTE`.  
 
 ![*Figure caption: Refine search*](../img/eds_cloud_product_search_ECOSTRESS.png)  
 
 ### Step 3. Explore the dataset details, including Cloud Access information  
 
-Once we clicked the (i), scrolling down the info page for the dataset we will see Cloud Access information, such as:  
+Once we click the (i), scrolling down the info page for the dataset we will see Cloud Access information, such as:  
 
 - whether the dataset is available in the cloud  
 - the cloud **Region** (all NASA Earthdata Cloud data is/will be in `us-west-2` region)  
@@ -34,11 +34,11 @@ Once we clicked the (i), scrolling down the info page for the dataset we will se
 
 ![*Figure caption: Documentation describing the In-region Direct S3 Access to Buckets*](../img/cloud_access_documentation.png)  
 
-**Note**: Clicking on "For Developers" to exapnd will provide programmatic endpoints such as those for the CMR API, and more.  
+**Note**: Clicking on "For Developers" to expand will provide programmatic endpoints such as those for the CMR API, and more.  
 
-For now, let's say we are intersted in getting download link(s) or access link(s) for specific data files (granules) within this collection.  
+For now, let's say we are interested in getting download link(s) or access link(s) for specific data files (granules) within this collection.  
 
-At the top of the dataset info section, click on *Search Results*, which will take us back to the list of datasets matching our search parameters. Clicking on the dataset (`ECOSTRESS ECO_L2T_LSTE`) we now see a list of files (granules) that are part of the dataset (collection).  
+At the top of the dataset info section, click on *Search Results*, which will take us back to the list of datasets matching our search parameters. Clicking on the dataset (`ECOSTRESS ECO_L2T_LSTE`) displaying a list of files (granules) that are part of the dataset (collection).  
 
 ### Step 4a. Download or data access for a single granule  
 
@@ -60,7 +60,7 @@ On the next page click the **Direct Download** option and click the green **Down
 
 ![*Figure caption: Direct download multiple granules*](../img/eds_ecov002_l2t_lste_multi_granule_download.png)  
 
-We're now taked to the final page for instructions to download and links for data access in the cloud. You should see three tabs: `Download Files`, `AWS S3 Access`, `Download Script`:  
+We're now taken to the final page for instructions to download and links for data access in the cloud. You should see three tabs: `Download Files`, `AWS S3 Access`, `Download Script`:  
 
 ![*Figure caption: Download to local*](../img/eds_ecov002_l2t_lste_multi_granule_download_https_links_src.png)  
 

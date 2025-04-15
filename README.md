@@ -37,8 +37,8 @@ Content in this repository includes Python tutorials, how-tos, scripts, defined 
 |----|-----|----|
 | **[earthdata_search_ecostress.md](/guides/earthdata_search_ecostress.md)** | Markdown Guide | Demonstrates how to work with Earthdata Search to access ECOSTRESS data|
 | **[appeears_ecostress.md](/guides/appeears_ecostress.md)** | Markdown Guide | Demonstrates how to work with AppEEARS to access and transform ECOSTRESS data|
-| **[how_to_direct_access_http_ecostress_cog.ipynb](/python/how-tos/how_to_direct_access_http_ecostress_cog.ipynb)** | Jupyter Notebook | Demonstrates how to stream ECOSTRESS COG data from the Earthdata Cloud|
-| **[how_to_direct_access_s3_ecostress_cog.ipynb](/python/how-tos/how_to_direct_access_s3_ecostress_cog.ipynb)** | Jupyter Notebook | Demonstrates how to directly access ECOSTRESS COG data from the Earthdata Cloud|
+| **[how_to_direct_access_http_ecostress_cog.ipynb](/python/how-tos/how_to_direct_access_http_ecostress_cog.ipynb)** | Jupyter Notebook | Demonstrates how to stream ECOSTRESS COG data from the Earthdata Cloud using HTTP links|
+| **[how_to_direct_access_s3_ecostress_cog.ipynb](/python/how-tos/how_to_direct_access_s3_ecostress_cog.ipynb)** | Jupyter Notebook | Demonstrates how to directly access ECOSTRESS COG data from the Earthdata Cloud using S3 links|
 | **[ECOSTRESS_Tutorial.ipynb](/python/tutorials/ECOSTRESS_Tutorial.ipynb)** | Jupyter Notebook | Demonstrates how to work with the ECOSTRESS Evapotranspiration PT-JPL Daily L3|
 | **[ECOSTRESS_swath2grid.py](/python/scripts/ecostress_swath2grid)** | Command line executable | Demonstrates how to convert ECOSTRESS swath data products into projected GeoTIFFs|
 | **[ECOSTRESS_geolocation.py](/python/scripts/extract_geolocation_flag)** | Command line executable | Demonstrates how to extract `GeolocationAccuracyQA` flag for ECOSTRESS version 2 data|
@@ -62,6 +62,6 @@ Email: LPDAAC@usgs.gov
 Voice: +1-866-573-3222  
 Organization: Land Processes Distributed Active Archive Center (LP DAAC)¹  
 Website: <https://lpdaac.usgs.gov/>  
-Date last modified: 02-03-2025  
+Date last modified: 04-15-2025  
 
 ¹Work performed under USGS contract G15PD00467 for NASA contract NNG14HH33I.  
