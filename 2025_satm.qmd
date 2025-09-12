@@ -1,0 +1,40 @@
+---
+title: 2025 ECOTRESS Science and Application Team Meeting
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.17.2
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+   
+
+Welcome to 2025 ECOSTRESS Science and Applications Team Meeting workshop inspired by the [NASA Space Apps Challenge](https://www.spaceappschallenge.org/)! 
+In this hands-on workshop, you will learn different ways to find, access, and explore ECOSTRESS data. You will also have two hours to create the most compelling ECOSTRESS image or application. The winning submission will be featured on the ECOSTRESS website.
+
+This session is hosted by NASA [Land Processes Distributed Active Archive Center (LP DAAC)](https://lpdaac.usgs.gov/) and [NASA Jet Propulsion Laboratory (JPL)](https://www.jpl.nasa.gov/) with support from the NASA [Openscapes](https://nasa-openscapes.github.io/) project.  
+Hands-on exercises will be executed from a [Jupyter Hub on the Openscapes 2i2c cloud instance](https://workshop.openscapes.2i2c.cloud/).
+
+## Learning Objectives
+- LP DAAC ECOSTRESS data updates
+- Ways to find and access ECOSTRESS data
+- How to explore ECOSTRESS tiled data using Earthdata Search
+- How to explore ECOSTRESS tiled data programmatically
+- How to evaluate quality of ECOSTESS data 
+
+## Slides
+<iframe src="https://docs.google.com/presentation/d/10Iynvap7WxmZsLJegFMEBx53I8nT1b3F/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="445" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+## Knowledge & Career Level: 
+Beginner, intermediate
+
+## Contact Info:  
+Email: LPDAAC@usgs.gov  
+Voice: +1-866-573-3222  
+Organization: Land Processes Distributed Active Archive Center (LP DAAC)¹  
+Website: <https://www.earthdata.nasa.gov/centers/lp-daac>  

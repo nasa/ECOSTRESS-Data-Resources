@@ -1,0 +1,75 @@
+project:
+  type: website     
+  output-dir: _site
+
+execute:
+  freeze: true  # never re-execute computational content during project render, needed for .qmd and .rmd since quarto does not render .ipynb by default
+
+website:
+  page-navigation: true
+  page-footer: 
+    center: "ECOSTRESS Data Resources"
+  title: "ECOSTRESS-Data-Resources"
+  site-url: https://nasa.github.io/ECOSTRESS-Data-Resources/
+  repo-url: https://github.com/nasa/ECOSTRESS-Data-Resources/
+  sidebar:
+    logo: img/lp_jpl_vitals_light.png
+    title: ECOSTRESS Data Resources
+    pinned: true
+    align: center
+    tools: 
+      - icon: globe
+        href: https://nasa.github.io/ECOSTRESS-Data-Resources/
+        text: "ECOSTRESS Data Resources Website"
+      - icon: github
+        href: https://github.com/nasa/ECOSTRESS-Data-Resources/
+        text: "ECOSTRESS Data Resources Repository"
+    style: "floating"
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Overview"
+        contents:
+        - text: "Welcome"
+          href: welcome.qmd
+      - section: "Workshops"
+        contents:
+        - text: "2025 ECOSTRESS Science and Application Team Meeting"
+          href: 2025_satm.qmd
+        - text: "Setup Instructions"
+          href: setup.md
+      - section: "Guides"            
+        contents: 
+        - text: "Search and Access ECOSTRESS Data using Earthdata Search"
+          href: guides/earthdata_search_ecostress.md
+        - text: "Access and Subset ECOSTRESS Data using AppEEARS"
+          href: guides/appeears_ecostress.md
+      - section: "Python Notebooks"            
+        contents: 
+        - text: "How to Directly Access ECOSTRESS Data (HTTP)"
+          href: python/how-tos/how_to_direct_access_http_ecostress_cog.ipynb
+        - text: "How to Directly Access ECOSTRESS Data (S3)"
+          href: python/how-tos/how_to_direct_access_s3_ecostress_cog.ipynb
+        - text: "Explore the ECOSTRESS Tiled Data"
+          href: python/tutorials/Work_with_ECOSTRESS_Tiled_data.ipynb
+      - section: "Scripts"            
+        contents: 
+        - text: "ECOSTRESS Swath to Grid Conversion Script"
+          href: python/scripts/ecostress_swath2grid/swath2grid.md
+        - text: "Extract ECOSTRESS Geolocation Accuracy QA Flag"
+          href: python/scripts/extract_geolocation_flag/geolocation.md
+      - section: "Contributing"
+        contents:
+          - href: CONTRIBUTING.md
+          - href: CODE_OF_CONDUCT.md
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+
