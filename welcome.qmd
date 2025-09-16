@@ -1,0 +1,35 @@
+---
+title: ECOSTRESS Data Resources
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .qmd
+      format_name: quarto
+      format_version: '1.0'
+      jupytext_version: 1.17.2
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+<p align="left">
+  <img src="img/ecostress_iss.png" />
+</p>
+
+**Welcome!** This repository provides guides, short how-tos, and tutorials to help users access and work with data from the Ecosystem Spaceborne Thermal Radiometer Experiment on Space Station ([ECOSTRESS](https://ecostress.jpl.nasa.gov/)) mission distributed by the Land Processes Distributed Active Archive Center ([LP DAAC](https://www.earthdata.nasa.gov/centers/lp-daac)). In the interest of open science this repository has been made public but is still under active development. All jupyter notebooks and scripts should be functional, however, changes or additions may be made. Contributions from all parties are welcome.
+
+
+## ECOSTRESS Background  
+
+The ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station ([ECOSTRESS](https://www.earthdata.nasa.gov/data/instruments/ecostress)) is aboard the International Space Station (ISS) and measures the temperature of plants to better understand how much water plants need and how they respond to stress. ECOSTRESS was launched to the ISS on June 29, 2018. It has a viewing swath width of around 384 km and views the surface of the Earth from 53.6° N latitude to 53.6° S latitude with variable revisit times, dependent on the orbit of the ISS.
+
+ECOSTRESS addresses three overarching science questions: How is the terrestrial biosphere responding to changes in water availability? How do changes in diurnal vegetation water stress impact the global carbon cycle? Can agricultural vulnerability be reduced through advanced monitoring of agricultural water consumptive use and improved drought estimation? ECOSTRESS uses a multispectral thermal infrared radiometer to measure the surface temperature. The radiometer obtains detailed images of the Earth’s surface at ~70 m spatial resolution that can provide information on the temperature of an individual farmer’s field. Learn more on the [ECOSTRESS website](https://ecostress.jpl.nasa.gov/).
+
+
+## Contact Info:  
+
+Email: LPDAAC@usgs.gov  
+Voice: +1-866-573-3222  
+Organization: Land Processes Distributed Active Archive Center (LP DAAC)¹  
+Website: <https://www.earthdata.nasa.gov/centers/lp-daac>  
