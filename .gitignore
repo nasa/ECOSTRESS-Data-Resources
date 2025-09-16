@@ -7,5 +7,5 @@ tutorial_aj_notes.zip
 .ipynb_checkpoints/
 img/
 /.quarto/
-/_site/
-/_freeze/
+_site/
+_freeze/
