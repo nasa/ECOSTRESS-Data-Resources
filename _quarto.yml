@@ -51,7 +51,7 @@ website:
         - text: "How to Directly Access ECOSTRESS Data (S3)"
           href: python/how-tos/how_to_direct_access_s3_ecostress_cog.ipynb
         - text: "Explore the ECOSTRESS Tiled Data"
-          href: python/tutorials/Work_with_ECOSTRESS_Tiled_data.ipynb
+          href: python/tutorials/Working_with_ECOSTRESS_Tiled_data.ipynb
       - section: "Scripts"            
         contents: 
         - text: "ECOSTRESS Swath to Grid Conversion Script"
