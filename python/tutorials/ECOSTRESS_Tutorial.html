@@ -58,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -101,9 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -312,7 +309,7 @@ The <code>tower_data.csv</code> file will need to be downloaded into the same di
 <h2 class="anchored" data-anchor-id="a.-import-packages">1a. Import Packages</h2>
 <section id="import-the-python-packages-required-to-complete-this-tutorial." class="level4">
 <h4 class="anchored" data-anchor-id="import-the-python-packages-required-to-complete-this-tutorial.">Import the python packages required to complete this tutorial.</h4>
-<div id="cell-3" class="cell" data-execution_count="12">
+<div id="cell-3" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
@@ -341,7 +338,7 @@ The <code>tower_data.csv</code> file will need to be downloaded into the same di
 <h2 class="anchored" data-anchor-id="b.-set-up-the-working-environment">1b. Set Up the Working Environment</h2>
 <section id="the-input-directory-is-defined-as-the-current-working-directory.-note-that-you-will-need-to-have-the-jupyter-notebook-and-example-data-.h5-and-.csv-stored-in-this-directory-in-order-to-execute-the-tutorial-successfully." class="level4">
 <h4 class="anchored" data-anchor-id="the-input-directory-is-defined-as-the-current-working-directory.-note-that-you-will-need-to-have-the-jupyter-notebook-and-example-data-.h5-and-.csv-stored-in-this-directory-in-order-to-execute-the-tutorial-successfully.">The input directory is defined as the current working directory. Note that you will need to have the jupyter notebook and example data (.h5 and .csv) stored in this directory in order to execute the tutorial successfully.</h4>
-<div id="cell-5" class="cell" data-execution_count="13">
+<div id="cell-5" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Current working directory will be set as the input directory</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>inDir <span class="op">=</span>  <span class="st">"../data"</span> <span class="co">#os.getcwd() + os.sep                                                     </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"input directory:</span><span class="ch">\n</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(inDir))</span>
@@ -353,12 +350,6 @@ The <code>tower_data.csv</code> file will need to be downloaded into the same di
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create output directory</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(outDir): </span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    os.makedirs(outDir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>input directory:
-../data
-output directory:
-..\output\</code></pre>
-</div>
 </div>
 </section>
 <section id="make-sure-that-the-ecostress-.h5-data-files-and-ameriflux-et-data-file-.csv-are-located-in-the-input-directory-printed-above." class="level4">
@@ -370,21 +361,15 @@ output directory:
 <h2 class="anchored" data-anchor-id="c.-retrieve-files">1c. Retrieve Files</h2>
 <section id="make-sure-that-the-eco1bgeo-and-eco3etptjpl-.h5-files-listed-in-the-directions-have-been-downloaded-to-the-indir-defined-above-to-follow-along-in-the-tutorial." class="level4">
 <h4 class="anchored" data-anchor-id="make-sure-that-the-eco1bgeo-and-eco3etptjpl-.h5-files-listed-in-the-directions-have-been-downloaded-to-the-indir-defined-above-to-follow-along-in-the-tutorial.">Make sure that the ECO1BGEO and ECO3ETPTJPL .h5 files listed in the directions have been downloaded to the <code>inDir</code> defined above to follow along in the tutorial.</h4>
-<div id="cell-8" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>os.chdir(inDir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-8" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>os.chdir(inDir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List directory contents and create lists of ECOSTRESS HDF5 files (GEO, ET)</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>geoList <span class="op">=</span> [<span class="bu">file</span> <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> os.listdir() <span class="cf">if</span> <span class="bu">file</span>.endswith(<span class="st">'.h5'</span>) <span class="kw">and</span> <span class="st">'GEO'</span> <span class="kw">in</span> <span class="bu">file</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"geolocation:</span><span class="ch">\n</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(geoList)))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>ecoList <span class="op">=</span> [<span class="bu">file</span> <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> os.listdir() <span class="cf">if</span> <span class="bu">file</span>.endswith(<span class="st">'.h5'</span>) <span class="kw">and</span> <span class="st">'GEO'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="bu">file</span>]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"products:</span><span class="ch">\n</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(ecoList)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>geolocation:
-ECOSTRESS_L1B_GEO_00468_007_20180805T220314_0601_03.h5
-products:
-ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04.h5</code></pre>
-</div>
+<div id="cell-9" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List directory contents and create lists of ECOSTRESS HDF5 files (GEO, ET)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>geoList <span class="op">=</span> [<span class="bu">file</span> <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> os.listdir() <span class="cf">if</span> <span class="bu">file</span>.endswith(<span class="st">'.h5'</span>) <span class="kw">and</span> <span class="st">'GEO'</span> <span class="kw">in</span> <span class="bu">file</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"geolocation:</span><span class="ch">\n</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(geoList)))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ecoList <span class="op">=</span> [<span class="bu">file</span> <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> os.listdir() <span class="cf">if</span> <span class="bu">file</span>.endswith(<span class="st">'.h5'</span>) <span class="kw">and</span> <span class="st">'GEO'</span> <span class="kw">not</span> <span class="kw">in</span> <span class="bu">file</span>]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"products:</span><span class="ch">\n</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(ecoList)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="the-standard-format-for-ecostress-filenames-is-as-follows" class="level4">
@@ -412,13 +397,10 @@ ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04.h5</code></pre>
 <h2 class="anchored" data-anchor-id="a.-open-an-ecostress-hdf5-file">2a. Open an ECOSTRESS HDF5 File</h2>
 <section id="read-in-an-ecostress-hdf5-file-using-the-h5py-package." class="level4">
 <h4 class="anchored" data-anchor-id="read-in-an-ecostress-hdf5-file-using-the-h5py-package.">Read in an ECOSTRESS HDF5 file using the <code>h5py</code> package.</h4>
-<div id="cell-12" class="cell" data-scrolled="true" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> h5py.File(ecoList[<span class="dv">0</span>])             <span class="co"># Read in ECOSTRESS HDF5 file</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ecoName <span class="op">=</span> ecoList[<span class="dv">0</span>].split(<span class="st">'.h5'</span>)[<span class="dv">0</span>]  <span class="co"># Keep original filename</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ecoName)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04</code></pre>
-</div>
+<div id="cell-12" class="cell" data-scrolled="true">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> h5py.File(ecoList[<span class="dv">0</span>])             <span class="co"># Read in ECOSTRESS HDF5 file</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ecoName <span class="op">=</span> ecoList[<span class="dv">0</span>].split(<span class="st">'.h5'</span>)[<span class="dv">0</span>]  <span class="co"># Keep original filename</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ecoName)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -427,39 +409,23 @@ ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04.h5</code></pre>
 <h2 class="anchored" data-anchor-id="b.-subset-sds-layers-and-read-sds-metadata">2b. Subset SDS Layers and read SDS Metadata</h2>
 <section id="identify-and-generate-a-list-of-all-the-sds-layers-in-the-hdf5-file." class="level4">
 <h4 class="anchored" data-anchor-id="identify-and-generate-a-list-of-all-the-sds-layers-in-the-hdf5-file.">Identify and generate a list of all the SDS layers in the HDF5 file.</h4>
-<div id="cell-14" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of all SDS inside of the .h5 file</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>eco_objs <span class="op">=</span> []</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>f.visit(eco_objs.append)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>ecoSDS <span class="op">=</span> [<span class="bu">str</span>(obj) <span class="cf">for</span> obj <span class="kw">in</span> eco_objs <span class="cf">if</span> <span class="bu">isinstance</span>(f[obj], h5py.Dataset)] </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dataset <span class="kw">in</span> ecoSDS[<span class="dv">0</span>:<span class="dv">10</span>]: </span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>EVAPOTRANSPIRATION PT-JPL/ETcanopy
-EVAPOTRANSPIRATION PT-JPL/ETdaily
-EVAPOTRANSPIRATION PT-JPL/ETinst
-EVAPOTRANSPIRATION PT-JPL/ETinstUncertainty
-EVAPOTRANSPIRATION PT-JPL/ETinterception
-EVAPOTRANSPIRATION PT-JPL/ETsoil
-L3_ET_PT-JPL Metadata/AncillaryFileAerosolOpticalDepth
-L3_ET_PT-JPL Metadata/AncillaryFileAirTemperatureNWP
-L3_ET_PT-JPL Metadata/AncillaryFileAirTemperatureRS
-L3_ET_PT-JPL Metadata/AncillaryFileAlbedo</code></pre>
-</div>
+<div id="cell-14" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of all SDS inside of the .h5 file</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>eco_objs <span class="op">=</span> []</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>f.visit(eco_objs.append)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ecoSDS <span class="op">=</span> [<span class="bu">str</span>(obj) <span class="cf">for</span> obj <span class="kw">in</span> eco_objs <span class="cf">if</span> <span class="bu">isinstance</span>(f[obj], h5py.Dataset)] </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dataset <span class="kw">in</span> ecoSDS[<span class="dv">0</span>:<span class="dv">10</span>]: </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="below-subset-the-sds-list-to-the-two-layers-needed-for-comparison-with-the-ground-based-ameriflux-data-etinst-and-etinstuncertainty." class="level4">
 <h4 class="anchored" data-anchor-id="below-subset-the-sds-list-to-the-two-layers-needed-for-comparison-with-the-ground-based-ameriflux-data-etinst-and-etinstuncertainty.">Below, subset the SDS list to the two layers needed for comparison with the ground-based AmeriFlux data, <code>ETinst</code> and <code>ETinstUncertainty</code>.</h4>
-<div id="cell-16" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset list to ETinst and ETinstUncertainty</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sds <span class="op">=</span> [<span class="st">'ETinst'</span>, <span class="st">'ETinstUncertainty'</span>]</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ecoSDS <span class="op">=</span> [dataset <span class="cf">for</span> dataset <span class="kw">in</span> ecoSDS <span class="cf">if</span> dataset.endswith(<span class="bu">tuple</span>(sds))]</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dataset <span class="kw">in</span> ecoSDS:</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(dataset.split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>ETinst
-ETinstUncertainty</code></pre>
-</div>
+<div id="cell-16" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset list to ETinst and ETinstUncertainty</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sds <span class="op">=</span> [<span class="st">'ETinst'</span>, <span class="st">'ETinstUncertainty'</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ecoSDS <span class="op">=</span> [dataset <span class="cf">for</span> dataset <span class="kw">in</span> ecoSDS <span class="cf">if</span> dataset.endswith(<span class="bu">tuple</span>(sds))]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dataset <span class="kw">in</span> ecoSDS:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(dataset.split(<span class="st">'/'</span>)[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <h1>
@@ -479,39 +445,32 @@ ETinstUncertainty</code></pre>
 <h2 class="anchored" data-anchor-id="a.-import-geolocation-file">3a. Import Geolocation File</h2>
 <section id="the-latitude-and-longitude-arrays-from-the-eco1bgeo-product-for-the-same-ecostress-orbitscene-id-are-needed-to-perform-the-swath2grid-conversion-on-the-eco3etpt-jpl-file." class="level4">
 <h4 class="anchored" data-anchor-id="the-latitude-and-longitude-arrays-from-the-eco1bgeo-product-for-the-same-ecostress-orbitscene-id-are-needed-to-perform-the-swath2grid-conversion-on-the-eco3etpt-jpl-file.">The <code>latitude</code> and <code>longitude</code> arrays from the ECO1BGEO product for the same ECOSTRESS orbit/scene ID are needed to perform the swath2grid conversion on the ECO3ETPT-JPL file.</h4>
-<div id="cell-18" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the matching ECO1BGEO file from the file list</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>geo <span class="op">=</span> [geoFile <span class="cf">for</span> geoFile <span class="kw">in</span> geoList <span class="cf">if</span> ecoList[<span class="dv">0</span>].split(<span class="st">'ECOSTRESS_L3_ET_PT-JPL_'</span>)[<span class="op">-</span><span class="dv">1</span>].split(<span class="st">'T'</span>)[<span class="dv">0</span>] <span class="kw">in</span> geoFile]</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(geo[<span class="dv">0</span>])</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ecoList[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>ECOSTRESS_L1B_GEO_00468_007_20180805T220314_0601_03.h5
-ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04.h5</code></pre>
-</div>
+<div id="cell-18" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the matching ECO1BGEO file from the file list</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>geo <span class="op">=</span> [geoFile <span class="cf">for</span> geoFile <span class="kw">in</span> geoList <span class="cf">if</span> ecoList[<span class="dv">0</span>].split(<span class="st">'ECOSTRESS_L3_ET_PT-JPL_'</span>)[<span class="op">-</span><span class="dv">1</span>].split(<span class="st">'T'</span>)[<span class="dv">0</span>] <span class="kw">in</span> geoFile]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(geo[<span class="dv">0</span>])</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ecoList[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="read-in-the-eco1bgeo-file-search-for-the-latitude-and-longitude-sds-and-import-into-python-as-arrays." class="level4">
 <h4 class="anchored" data-anchor-id="read-in-the-eco1bgeo-file-search-for-the-latitude-and-longitude-sds-and-import-into-python-as-arrays.">Read in the ECO1BGEO file, search for the <code>latitude</code> and <code>longitude</code> SDS, and import into Python as arrays.</h4>
-<div id="cell-20" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open Geo File</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> h5py.File(geo[<span class="dv">0</span>])</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>geo_objs <span class="op">=</span> []</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>g.visit(geo_objs.append)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for lat/lon SDS inside data file</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>latSD <span class="op">=</span> [<span class="bu">str</span>(obj) <span class="cf">for</span> obj <span class="kw">in</span> geo_objs <span class="cf">if</span> <span class="bu">isinstance</span>(g[obj], h5py.Dataset) <span class="kw">and</span> <span class="st">'/latitude'</span> <span class="kw">in</span> obj]</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>lonSD <span class="op">=</span> [<span class="bu">str</span>(obj) <span class="cf">for</span> obj <span class="kw">in</span> geo_objs <span class="cf">if</span> <span class="bu">isinstance</span>(g[obj], h5py.Dataset) <span class="kw">and</span> <span class="st">'/longitude'</span> <span class="kw">in</span> obj]</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Open SDS as arrays</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>lat <span class="op">=</span> g[latSD[<span class="dv">0</span>]][()].astype(<span class="bu">float</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>lon <span class="op">=</span> g[lonSD[<span class="dv">0</span>]][()].astype(<span class="bu">float</span>)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the array dimensions</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>dims <span class="op">=</span> lat.shape</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(5632, 5400)</code></pre>
-</div>
+<div id="cell-20" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open Geo File</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> h5py.File(geo[<span class="dv">0</span>])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>geo_objs <span class="op">=</span> []</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>g.visit(geo_objs.append)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for lat/lon SDS inside data file</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>latSD <span class="op">=</span> [<span class="bu">str</span>(obj) <span class="cf">for</span> obj <span class="kw">in</span> geo_objs <span class="cf">if</span> <span class="bu">isinstance</span>(g[obj], h5py.Dataset) <span class="kw">and</span> <span class="st">'/latitude'</span> <span class="kw">in</span> obj]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>lonSD <span class="op">=</span> [<span class="bu">str</span>(obj) <span class="cf">for</span> obj <span class="kw">in</span> geo_objs <span class="cf">if</span> <span class="bu">isinstance</span>(g[obj], h5py.Dataset) <span class="kw">and</span> <span class="st">'/longitude'</span> <span class="kw">in</span> obj]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Open SDS as arrays</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>lat <span class="op">=</span> g[latSD[<span class="dv">0</span>]][()].astype(<span class="bu">float</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>lon <span class="op">=</span> g[lonSD[<span class="dv">0</span>]][()].astype(<span class="bu">float</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the array dimensions</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>dims <span class="op">=</span> lat.shape</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dims)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -523,28 +482,19 @@ ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04.h5</code></pre>
 </section>
 <section id="the-following-sections-use-the-pyresample-package-to-resample-the-ecostress-swath-dataset-to-a-grid-using-nearest-neighbor-method.-this-process-begins-by-defining-the-swath-dimensions-using-the-latlon-arrays-below." class="level4">
 <h4 class="anchored" data-anchor-id="the-following-sections-use-the-pyresample-package-to-resample-the-ecostress-swath-dataset-to-a-grid-using-nearest-neighbor-method.-this-process-begins-by-defining-the-swath-dimensions-using-the-latlon-arrays-below.">The following sections use the <a href="https://pyresample.readthedocs.io/en/stable/">pyresample package</a> to resample the ECOSTRESS swath dataset to a grid using nearest neighbor method. This process begins by defining the swath dimensions using the lat/lon arrays below.</h4>
-<div id="cell-22" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set swath definition from lat/lon arrays</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>swathDef <span class="op">=</span> geom.SwathDefinition(lons<span class="op">=</span>lon, lats<span class="op">=</span>lat)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>swathDef.corners</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>[(-118.7239829569036, 34.221086430090274),
- (-121.86703190925778, 36.84456587689783),
- (-118.81973784761588, 39.05327678830593),
- (-115.71697211227038, 36.35603480980171)]</code></pre>
-</div>
+<div id="cell-22" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set swath definition from lat/lon arrays</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>swathDef <span class="op">=</span> geom.SwathDefinition(lons<span class="op">=</span>lon, lats<span class="op">=</span>lat)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>swathDef.corners</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="define-the-coordinates-in-the-middle-of-the-swath-which-are-used-to-calculate-an-estimate-of-the-output-rowscolumns-for-the-gridded-output." class="level4">
 <h4 class="anchored" data-anchor-id="define-the-coordinates-in-the-middle-of-the-swath-which-are-used-to-calculate-an-estimate-of-the-output-rowscolumns-for-the-gridded-output.">Define the coordinates in the middle of the swath, which are used to calculate an estimate of the output rows/columns for the gridded output.</h4>
-<div id="cell-24" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the lat/lon for the middle of the swath</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>mid <span class="op">=</span> [<span class="bu">int</span>(lat.shape[<span class="dv">1</span>] <span class="op">/</span> <span class="dv">2</span>) <span class="op">-</span> <span class="dv">1</span>, <span class="bu">int</span>(lat.shape[<span class="dv">0</span>] <span class="op">/</span> <span class="dv">2</span>) <span class="op">-</span> <span class="dv">1</span>]</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>midLat, midLon <span class="op">=</span> lat[mid[<span class="dv">0</span>]][mid[<span class="dv">1</span>]], lon[mid[<span class="dv">0</span>]][mid[<span class="dv">1</span>]]</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>midLat, midLon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
-<pre><code>(np.float64(36.63127602811011), np.float64(-118.88736212064671))</code></pre>
-</div>
+<div id="cell-24" class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the lat/lon for the middle of the swath</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mid <span class="op">=</span> [<span class="bu">int</span>(lat.shape[<span class="dv">1</span>] <span class="op">/</span> <span class="dv">2</span>) <span class="op">-</span> <span class="dv">1</span>, <span class="bu">int</span>(lat.shape[<span class="dv">0</span>] <span class="op">/</span> <span class="dv">2</span>) <span class="op">-</span> <span class="dv">1</span>]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>midLat, midLon <span class="op">=</span> lat[mid[<span class="dv">0</span>]][mid[<span class="dv">1</span>]], lon[mid[<span class="dv">0</span>]][mid[<span class="dv">1</span>]]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>midLat, midLon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="below-pyproj.proj-is-used-to-perform-a-cartographic-transformation-by-defining-an-azimuthal-equidistant-projection-centered-on-the-midpoint-of-the-swath.-once-the-projection-is-defined-convert-the-lower-left-and-upper-right-corners-of-the-latlon-arrays-to-a-location-in-meters-in-the-new-projection.-lastly-measure-the-distance-between-the-corners-and-divide-by-70-meters-the-nominal-pixel-size-that-we-are-aiming-for.-azimuthal-equidistant-projection-was-chosen-here-based-on-the-following-characteristics-of-this-projection" class="level4">
@@ -555,43 +505,43 @@ ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04.h5</code></pre>
 <li>Distances between all points are proportionally correct from center point</li>
 <li>Azimuth (direction) are correct from the center point</li>
 </ul>
-<div id="cell-26" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define AEQD projection centered at swath center</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>epsgConvert <span class="op">=</span> pyproj.Proj(<span class="st">"+proj=aeqd +lat_0=</span><span class="sc">{}</span><span class="st"> +lon_0=</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(midLat, midLon))</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use info from AEQD projection bbox to calculate output cols/rows/pixel size</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>llLon, llLat <span class="op">=</span> epsgConvert(np.<span class="bu">min</span>(lon), np.<span class="bu">min</span>(lat), inverse<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>urLon, urLat <span class="op">=</span> epsgConvert(np.<span class="bu">max</span>(lon), np.<span class="bu">max</span>(lat), inverse<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>areaExtent <span class="op">=</span> (llLon, llLat, urLon, urLat)</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((areaExtent[<span class="dv">2</span>] <span class="op">-</span> areaExtent[<span class="dv">0</span>]) <span class="op">/</span> <span class="dv">70</span>))  <span class="co"># 70 m pixel size</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((areaExtent[<span class="dv">3</span>] <span class="op">-</span> areaExtent[<span class="dv">1</span>]) <span class="op">/</span> <span class="dv">70</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define AEQD projection centered at swath center</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>epsgConvert <span class="op">=</span> pyproj.Proj(<span class="st">"+proj=aeqd +lat_0=</span><span class="sc">{}</span><span class="st"> +lon_0=</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(midLat, midLon))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use info from AEQD projection bbox to calculate output cols/rows/pixel size</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>llLon, llLat <span class="op">=</span> epsgConvert(np.<span class="bu">min</span>(lon), np.<span class="bu">min</span>(lat), inverse<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>urLon, urLat <span class="op">=</span> epsgConvert(np.<span class="bu">max</span>(lon), np.<span class="bu">max</span>(lat), inverse<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>areaExtent <span class="op">=</span> (llLon, llLat, urLon, urLat)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((areaExtent[<span class="dv">2</span>] <span class="op">-</span> areaExtent[<span class="dv">0</span>]) <span class="op">/</span> <span class="dv">70</span>))  <span class="co"># 70 m pixel size</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((areaExtent[<span class="dv">3</span>] <span class="op">-</span> areaExtent[<span class="dv">1</span>]) <span class="op">/</span> <span class="dv">70</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="use-number-of-rows-and-columns-generated-above-from-the-aeqd-projection-to-set-a-representative-number-of-rows-and-columns-in-the-geographic-area-definition-which-will-then-be-translated-to-degrees-below-then-take-the-smaller-of-the-two-pixel-dims-to-determine-output-size-and-ensure-square-pixels." class="level4">
 <h4 class="anchored" data-anchor-id="use-number-of-rows-and-columns-generated-above-from-the-aeqd-projection-to-set-a-representative-number-of-rows-and-columns-in-the-geographic-area-definition-which-will-then-be-translated-to-degrees-below-then-take-the-smaller-of-the-two-pixel-dims-to-determine-output-size-and-ensure-square-pixels.">Use number of rows and columns generated above from the AEQD projection to set a representative number of rows and columns in the Geographic area definition, which will then be translated to degrees below, then take the smaller of the two pixel dims to determine output size and ensure square pixels.</h4>
-<div id="cell-28" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Geographic projection</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>epsg, proj, pName <span class="op">=</span> <span class="st">'4326'</span>, <span class="st">'longlat'</span>, <span class="st">'Geographic'</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define bounding box of swath</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>llLon, llLat, urLon, urLat <span class="op">=</span> np.<span class="bu">min</span>(lon), np.<span class="bu">min</span>(lat), np.<span class="bu">max</span>(lon), np.<span class="bu">max</span>(lat)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>areaExtent <span class="op">=</span> (llLon, llLat, urLon, urLat)</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create area definition with estimated number of columns and rows</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>projDict <span class="op">=</span> pyproj.CRS(<span class="st">"epsg:4326"</span>)</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>areaDef <span class="op">=</span> geom.AreaDefinition(epsg, pName, proj, projDict, cols, rows, areaExtent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-28" class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Geographic projection</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>epsg, proj, pName <span class="op">=</span> <span class="st">'4326'</span>, <span class="st">'longlat'</span>, <span class="st">'Geographic'</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define bounding box of swath</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>llLon, llLat, urLon, urLat <span class="op">=</span> np.<span class="bu">min</span>(lon), np.<span class="bu">min</span>(lat), np.<span class="bu">max</span>(lon), np.<span class="bu">max</span>(lat)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>areaExtent <span class="op">=</span> (llLon, llLat, urLon, urLat)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create area definition with estimated number of columns and rows</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>projDict <span class="op">=</span> pyproj.CRS(<span class="st">"epsg:4326"</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>areaDef <span class="op">=</span> geom.AreaDefinition(epsg, pName, proj, projDict, cols, rows, areaExtent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="below-square-the-pixels-by-setting-the-pixel-size-to-the-smaller-of-the-x-any-y-values-output-by-the-areadefinition-then-use-the-pixel-size-to-recalculate-the-number-of-output-colsrows." class="level4">
 <h4 class="anchored" data-anchor-id="below-square-the-pixels-by-setting-the-pixel-size-to-the-smaller-of-the-x-any-y-values-output-by-the-areadefinition-then-use-the-pixel-size-to-recalculate-the-number-of-output-colsrows.">Below, square the pixels by setting the pixel size to the smaller of the x any y values output by the <code>AreaDefinition</code>, then use the pixel size to recalculate the number of output cols/rows.</h4>
-<div id="cell-30" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Square pixels and calculate output cols/rows</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>ps <span class="op">=</span> np.<span class="bu">min</span>([areaDef.pixel_size_x, areaDef.pixel_size_y])</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((areaExtent[<span class="dv">2</span>] <span class="op">-</span> areaExtent[<span class="dv">0</span>]) <span class="op">/</span> ps))</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((areaExtent[<span class="dv">3</span>] <span class="op">-</span> areaExtent[<span class="dv">1</span>]) <span class="op">/</span> ps))</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up a new Geographic area definition with the refined cols/rows</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>areaDef <span class="op">=</span> geom.AreaDefinition(epsg, pName, proj, projDict, cols, rows, areaExtent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-30" class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Square pixels and calculate output cols/rows</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ps <span class="op">=</span> np.<span class="bu">min</span>([areaDef.pixel_size_x, areaDef.pixel_size_y])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((areaExtent[<span class="dv">2</span>] <span class="op">-</span> areaExtent[<span class="dv">0</span>]) <span class="op">/</span> ps))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((areaExtent[<span class="dv">3</span>] <span class="op">-</span> areaExtent[<span class="dv">1</span>]) <span class="op">/</span> ps))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up a new Geographic area definition with the refined cols/rows</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>areaDef <span class="op">=</span> geom.AreaDefinition(epsg, pName, proj, projDict, cols, rows, areaExtent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="below-use-pyresample-kd_trees-get_neighbour_info-to-create-arrays-with-information-on-the-nearest-neighbor-to-each-grid-point." class="level4">
@@ -599,9 +549,9 @@ ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04.h5</code></pre>
 </section>
 <section id="this-is-the-most-computationally-heavy-task-in-the-swath2grid-conversion-and-using-get_neighbour_info-speeds-up-the-process-if-you-plan-to-resample-multiple-sds-within-an-ecostress-product-compute-once-instead-of-for-every-sds." class="level4">
 <h4 class="anchored" data-anchor-id="this-is-the-most-computationally-heavy-task-in-the-swath2grid-conversion-and-using-get_neighbour_info-speeds-up-the-process-if-you-plan-to-resample-multiple-sds-within-an-ecostress-product-compute-once-instead-of-for-every-sds.">This is the most computationally heavy task in the swath2grid conversion and using <code>get_neighbour_info</code> speeds up the process if you plan to resample multiple SDS within an ECOSTRESS product (compute once instead of for every SDS).</h4>
-<div id="cell-32" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get arrays with information about the nearest neighbor to each grid point </span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>index, outdex, indexArr, distArr <span class="op">=</span> kdt.get_neighbour_info(swathDef, areaDef, <span class="dv">210</span>, neighbours<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-32" class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get arrays with information about the nearest neighbor to each grid point </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>index, outdex, indexArr, distArr <span class="op">=</span> kdt.get_neighbour_info(swathDef, areaDef, <span class="dv">210</span>, neighbours<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="above-the-function-is-comparing-the-swath-and-area-definitions-to-locate-the-nearest-neighbor-neighbours1.-210-is-the-radius_of_influence-or-the-radius-used-to-search-for-the-nearest-neighboring-pixel-in-the-swath-in-meters." class="level4">
@@ -613,54 +563,42 @@ ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04.h5</code></pre>
 <h2 class="anchored" data-anchor-id="c.-read-sds-metadata">3c. Read SDS Metadata</h2>
 <section id="list-the-attributes-for-the-etinst-layer-which-can-then-be-used-to-define-the-fill-value-and-scale-factor." class="level4">
 <h4 class="anchored" data-anchor-id="list-the-attributes-for-the-etinst-layer-which-can-then-be-used-to-define-the-fill-value-and-scale-factor.">List the attributes for the <code>ETinst</code> layer, which can then be used to define the fill value and scale factor.</h4>
-<div id="cell-35" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in ETinst and print out SDS attributes</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> ecoSDS[<span class="dv">0</span>]</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>ecoSD <span class="op">=</span> f[s][()]</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> attr <span class="kw">in</span> f[s].attrs:</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(f[s].attrs[attr]) <span class="op">==</span> np.ndarray:</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>attr<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>f[s]<span class="sc">.</span>attrs[attr][<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>attr<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>f[s]<span class="sc">.</span>attrs[attr]<span class="sc">.</span>decode(<span class="st">"utf-8"</span>)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>_FillValue = nan
-add_offset = 0.0
-long_name = Instantaneous Latent Heat Flux
-scale_factor = 1.0
-units = W/m^2
-valid_max = 2000.0
-valid_min = 0.0</code></pre>
-</div>
+<div id="cell-35" class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in ETinst and print out SDS attributes</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> ecoSDS[<span class="dv">0</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ecoSD <span class="op">=</span> f[s][()]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> attr <span class="kw">in</span> f[s].attrs:</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">type</span>(f[s].attrs[attr]) <span class="op">==</span> np.ndarray:</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>attr<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>f[s]<span class="sc">.</span>attrs[attr][<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>attr<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>f[s]<span class="sc">.</span>attrs[attr]<span class="sc">.</span>decode(<span class="st">"utf-8"</span>)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="extract-the-scale-factor-add-offset-and-fill-value-from-the-sds-metadata." class="level4">
 <h4 class="anchored" data-anchor-id="extract-the-scale-factor-add-offset-and-fill-value-from-the-sds-metadata.">Extract the scale factor, add offset and fill value from the SDS metadata.</h4>
-<div id="cell-37" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>f[s].attrs[<span class="st">'_FillValue'</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
-<pre><code>np.float32(nan)</code></pre>
+<div id="cell-37" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>f[s].attrs[<span class="st">'_FillValue'</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="cell-38" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read SDS attributes and define fill value, add offset, and scale factor if available</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> <span class="bu">int</span>(f[s].attrs[<span class="st">'_FillValue'</span>])</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">KeyError</span>:</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> f[s].attrs[<span class="st">'_FillValue'</span>][<span class="dv">0</span>]</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    sf <span class="op">=</span> f[s].attrs[<span class="st">'_Scale'</span>][<span class="dv">0</span>]</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    sf <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    add_off <span class="op">=</span> f[s].attrs[<span class="st">'_Offset'</span>][<span class="dv">0</span>]</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    add_off <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    units <span class="op">=</span> f[s].attrs[<span class="st">'units'</span>].decode(<span class="st">"utf-8"</span>)</span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    units <span class="op">=</span> <span class="st">'none'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-38" class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read SDS attributes and define fill value, add offset, and scale factor if available</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> <span class="bu">int</span>(f[s].attrs[<span class="st">'_FillValue'</span>])</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">KeyError</span>:</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> f[s].attrs[<span class="st">'_FillValue'</span>][<span class="dv">0</span>]</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    sf <span class="op">=</span> f[s].attrs[<span class="st">'_Scale'</span>][<span class="dv">0</span>]</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    sf <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    add_off <span class="op">=</span> f[s].attrs[<span class="st">'_Offset'</span>][<span class="dv">0</span>]</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    add_off <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    units <span class="op">=</span> f[s].attrs[<span class="st">'units'</span>].decode(<span class="st">"utf-8"</span>)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    units <span class="op">=</span> <span class="st">'none'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -669,9 +607,9 @@ valid_min = 0.0</code></pre>
 <h2 class="anchored" data-anchor-id="d.-perform-k-d-tree-resampling">3d. Perform K-D Tree Resampling</h2>
 <section id="remember-that-the-resampling-has-been-split-into-two-steps.-in-section-3b.-arrays-containing-the-nearest-neighbor-to-each-grid-point-were-created.-the-second-step-is-to-use-those-arrays-to-retrieve-a-resampled-result." class="level4">
 <h4 class="anchored" data-anchor-id="remember-that-the-resampling-has-been-split-into-two-steps.-in-section-3b.-arrays-containing-the-nearest-neighbor-to-each-grid-point-were-created.-the-second-step-is-to-use-those-arrays-to-retrieve-a-resampled-result.">Remember that the resampling has been split into two steps. In section 3b. arrays containing the nearest neighbor to each grid point were created. The second step is to use those arrays to retrieve a resampled result.</h4>
-<div id="cell-40" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform K-D Tree nearest neighbor resampling (swath 2 grid conversion)</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>ETgeo <span class="op">=</span> kdt.get_sample_from_neighbour_info(<span class="st">'nn'</span>, areaDef.shape, ecoSD, index, outdex, indexArr, fill_value<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-40" class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform K-D Tree nearest neighbor resampling (swath 2 grid conversion)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>ETgeo <span class="op">=</span> kdt.get_sample_from_neighbour_info(<span class="st">'nn'</span>, areaDef.shape, ecoSD, index, outdex, indexArr, fill_value<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="above-resample-the-swath-ecosd-array-using-nearest-neighbor-already-calculated-in-section-3b.-and-defined-above-as-the-index-outdex-and-indexarr-and-also-set-the-fill-value-that-was-defined-in-section-3c." class="level4">
@@ -679,18 +617,10 @@ valid_min = 0.0</code></pre>
 </section>
 <section id="below-define-the-geotransform-for-the-output-upper-left-x-horizontal-pixel-size-rotation-upper-left-y-rotation-vertical-pixel-size." class="level4">
 <h4 class="anchored" data-anchor-id="below-define-the-geotransform-for-the-output-upper-left-x-horizontal-pixel-size-rotation-upper-left-y-rotation-vertical-pixel-size.">Below, define the geotransform for the output (upper left x, horizontal pixel size, rotation, upper left y, rotation, vertical pixel size).</h4>
-<div id="cell-42" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the geotransform </span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>gt <span class="op">=</span> [areaDef.area_extent[<span class="dv">0</span>], ps, <span class="dv">0</span>, areaDef.area_extent[<span class="dv">3</span>], <span class="dv">0</span>, <span class="op">-</span>ps]</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>gt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
-<pre><code>[np.float64(-121.86703190925778),
- np.float64(0.0006302582963630697),
- 0,
- np.float64(39.05327678830593),
- 0,
- np.float64(-0.0006302582963630697)]</code></pre>
-</div>
+<div id="cell-42" class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the geotransform </span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>gt <span class="op">=</span> [areaDef.area_extent[<span class="dv">0</span>], ps, <span class="dv">0</span>, areaDef.area_extent[<span class="dv">3</span>], <span class="dv">0</span>, <span class="op">-</span>ps]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>gt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -699,33 +629,33 @@ valid_min = 0.0</code></pre>
 <h2 class="anchored" data-anchor-id="e.-basic-image-processing">3e. Basic Image Processing</h2>
 <section id="apply-the-scale-factor-and-add-offset-and-set-the-fill-value-defined-in-the-previous-section-on-the-resampled-data." class="level4">
 <h4 class="anchored" data-anchor-id="apply-the-scale-factor-and-add-offset-and-set-the-fill-value-defined-in-the-previous-section-on-the-resampled-data.">Apply the scale factor and add offset and set the fill value defined in the previous section on the resampled data.</h4>
-<div id="cell-44" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ETgeo <span class="op">=</span> ETgeo <span class="op">*</span> sf <span class="op">+</span> add_off            <span class="co"># Apply Scale Factor and Add Offset</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>ETgeo[ETgeo <span class="op">==</span> fv <span class="op">*</span> sf <span class="op">+</span> add_off] <span class="op">=</span> fv  <span class="co"># Set Fill Value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-44" class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ETgeo <span class="op">=</span> ETgeo <span class="op">*</span> sf <span class="op">+</span> add_off            <span class="co"># Apply Scale Factor and Add Offset</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>ETgeo[ETgeo <span class="op">==</span> fv <span class="op">*</span> sf <span class="op">+</span> add_off] <span class="op">=</span> fv  <span class="co"># Set Fill Value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rerun-steps-3c---3e-for-etinstuncertainty." class="level4">
 <h4 class="anchored" data-anchor-id="rerun-steps-3c---3e-for-etinstuncertainty.">Rerun steps 3c - 3e for <code>ETinstUncertainty</code>.</h4>
-<div id="cell-46" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> ecoSDS[<span class="dv">1</span>]</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>ecoSD <span class="op">=</span> f[s][()]</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> <span class="bu">int</span>(f[s].attrs[<span class="st">'_FillValue'</span>])</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">KeyError</span>:</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> f[s].attrs[<span class="st">'_FillValue'</span>][<span class="dv">0</span>]</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    sf <span class="op">=</span> f[s].attrs[<span class="st">'_Scale'</span>][<span class="dv">0</span>]</span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    sf <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>    add_off <span class="op">=</span> f[s].attrs[<span class="st">'_Offset'</span>][<span class="dv">0</span>]</span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>    add_off <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>UNgeo <span class="op">=</span> kdt.get_sample_from_neighbour_info(<span class="st">'nn'</span>, areaDef.shape, ecoSD, index, outdex, indexArr, fill_value<span class="op">=</span><span class="va">None</span>)</span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>UNgeo <span class="op">=</span> UNgeo <span class="op">*</span> sf <span class="op">+</span> add_off</span>
-<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>UNgeo[UNgeo <span class="op">==</span> fv <span class="op">*</span> sf <span class="op">+</span> add_off] <span class="op">=</span> fv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-46" class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> ecoSDS[<span class="dv">1</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>ecoSD <span class="op">=</span> f[s][()]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> <span class="bu">int</span>(f[s].attrs[<span class="st">'_FillValue'</span>])</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">KeyError</span>:</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    fv <span class="op">=</span> f[s].attrs[<span class="st">'_FillValue'</span>][<span class="dv">0</span>]</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    sf <span class="op">=</span> f[s].attrs[<span class="st">'_Scale'</span>][<span class="dv">0</span>]</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    sf <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    add_off <span class="op">=</span> f[s].attrs[<span class="st">'_Offset'</span>][<span class="dv">0</span>]</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    add_off <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>UNgeo <span class="op">=</span> kdt.get_sample_from_neighbour_info(<span class="st">'nn'</span>, areaDef.shape, ecoSD, index, outdex, indexArr, fill_value<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>UNgeo <span class="op">=</span> UNgeo <span class="op">*</span> sf <span class="op">+</span> add_off</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>UNgeo[UNgeo <span class="op">==</span> fv <span class="op">*</span> sf <span class="op">+</span> add_off] <span class="op">=</span> fv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <h1>
@@ -742,9 +672,9 @@ valid_min = 0.0</code></pre>
 <h2 class="anchored" data-anchor-id="a.-set-up-a-dictionary">4a. Set Up a Dictionary</h2>
 <section id="in-this-section-create-a-dictionary-containing-each-of-the-arrays-that-will-be-exported-as-geotiffs." class="level4">
 <h4 class="anchored" data-anchor-id="in-this-section-create-a-dictionary-containing-each-of-the-arrays-that-will-be-exported-as-geotiffs.">In this section, create a dictionary containing each of the arrays that will be exported as GeoTIFFs.</h4>
-<div id="cell-48" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up dictionary of arrays to export</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>outFiles <span class="op">=</span> {<span class="st">'ETinst'</span>: ETgeo, <span class="st">'ETinstUncertainty'</span>: UNgeo}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-48" class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up dictionary of arrays to export</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>outFiles <span class="op">=</span> {<span class="st">'ETinst'</span>: ETgeo, <span class="st">'ETinstUncertainty'</span>: UNgeo}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -753,53 +683,45 @@ valid_min = 0.0</code></pre>
 <h2 class="anchored" data-anchor-id="b.-define-crs-and-export-as-geotiffs">4b. Define CRS and Export as GeoTIFFs</h2>
 <section id="now-that-the-data-have-been-imported-and-resampled-into-a-gridded-raster-array-export-the-results-as-geotiffs-using-a-for-loop-in-this-section." class="level4">
 <h4 class="anchored" data-anchor-id="now-that-the-data-have-been-imported-and-resampled-into-a-gridded-raster-array-export-the-results-as-geotiffs-using-a-for-loop-in-this-section.">Now that the data have been imported and resampled into a gridded raster array, export the results as GeoTIFFs using a <code>for</code> loop in this section.</h4>
-<div id="cell-50" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>fv <span class="op">=</span> np.nan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-50" class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>fv <span class="op">=</span> np.nan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-51" class="cell" data-scrolled="true" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through each item in dictionary created above</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> outFiles:</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set up output name</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    outName <span class="op">=</span> join(outDir, <span class="st">'</span><span class="sc">{}</span><span class="st">_</span><span class="sc">{}</span><span class="st">.tif'</span>.<span class="bu">format</span>(ecoName, <span class="bu">file</span>))</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"output file:</span><span class="ch">\n</span><span class="sc">{}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(outName))</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get driver, specify dimensions, define and set output geotransform</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    height, width <span class="op">=</span> outFiles[<span class="bu">file</span>].shape</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    driv <span class="op">=</span> gdal.GetDriverByName(<span class="st">'GTiff'</span>)</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    dataType <span class="op">=</span> gdal_array.NumericTypeCodeToGDALTypeCode(outFiles[<span class="bu">file</span>].dtype)</span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> driv.Create(outName, width, height, <span class="dv">1</span>, dataType)</span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    d.SetGeoTransform(gt)</span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create and set output projection, write output array data</span></span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define target SRS</span></span>
-<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    srs <span class="op">=</span> osr.SpatialReference()</span>
-<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    srs.ImportFromEPSG(<span class="bu">int</span>(epsg))</span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    d.SetProjection(srs.ExportToWkt())</span>
-<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>    srs.ExportToWkt()</span>
-<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Write array to band</span></span>
-<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>    band <span class="op">=</span> d.GetRasterBand(<span class="dv">1</span>)</span>
-<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>    band.WriteArray(outFiles[<span class="bu">file</span>])</span>
-<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define fill value if it exists, if not, set to mask fill value</span></span>
-<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fv <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="kw">and</span> fv <span class="op">!=</span> <span class="st">'NaN'</span>:</span>
-<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>        band.SetNoDataValue(fv)</span>
-<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>            band.SetNoDataValue(outFiles[<span class="bu">file</span>].fill_value)</span>
-<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
-<span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
-<span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a>    band.FlushCache()</span>
-<span id="cb37-35"><a href="#cb37-35" aria-hidden="true" tabindex="-1"></a>    d, band <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>output file:
-..\output\ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04_ETinst.tif
-
-output file:
-..\output\ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04_ETinstUncertainty.tif
-</code></pre>
-</div>
+<div id="cell-51" class="cell" data-scrolled="true">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through each item in dictionary created above</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> outFiles:</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set up output name</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    outName <span class="op">=</span> join(outDir, <span class="st">'</span><span class="sc">{}</span><span class="st">_</span><span class="sc">{}</span><span class="st">.tif'</span>.<span class="bu">format</span>(ecoName, <span class="bu">file</span>))</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"output file:</span><span class="ch">\n</span><span class="sc">{}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(outName))</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get driver, specify dimensions, define and set output geotransform</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    height, width <span class="op">=</span> outFiles[<span class="bu">file</span>].shape</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    driv <span class="op">=</span> gdal.GetDriverByName(<span class="st">'GTiff'</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    dataType <span class="op">=</span> gdal_array.NumericTypeCodeToGDALTypeCode(outFiles[<span class="bu">file</span>].dtype)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> driv.Create(outName, width, height, <span class="dv">1</span>, dataType)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    d.SetGeoTransform(gt)</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create and set output projection, write output array data</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define target SRS</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>    srs <span class="op">=</span> osr.SpatialReference()</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    srs.ImportFromEPSG(<span class="bu">int</span>(epsg))</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    d.SetProjection(srs.ExportToWkt())</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    srs.ExportToWkt()</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Write array to band</span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>    band <span class="op">=</span> d.GetRasterBand(<span class="dv">1</span>)</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>    band.WriteArray(outFiles[<span class="bu">file</span>])</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define fill value if it exists, if not, set to mask fill value</span></span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fv <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="kw">and</span> fv <span class="op">!=</span> <span class="st">'NaN'</span>:</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>        band.SetNoDataValue(fv)</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>            band.SetNoDataValue(outFiles[<span class="bu">file</span>].fill_value)</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>    band.FlushCache()</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>    d, band <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <h1>
@@ -819,165 +741,20 @@ output file:
 <blockquote class="blockquote">
 <p>The AmeriFlux tower data was provided by Mike Goulden for the AmeriFlux US-CZ3 tower. The csv includes half-hourly observations of Latent Heat (W/m<span class="math inline">\(^{2}\)</span>) for the same day as the ECOSTRESS observation.</p>
 </blockquote>
-<div id="cell-53" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import csv file with AmeriFlux data and drop NaNs</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>towerData <span class="op">=</span> pd.read_csv(<span class="st">'tower_data.csv'</span>)</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>towerData <span class="op">=</span> towerData.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-53" class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import csv file with AmeriFlux data and drop NaNs</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>towerData <span class="op">=</span> pd.read_csv(<span class="st">'tower_data.csv'</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>towerData <span class="op">=</span> towerData.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="next-use-the-parser-package-and-a-lambda-function-to-go-through-each-time-stamp-and-reformat-to-date-and-time-objects." class="level4">
 <h4 class="anchored" data-anchor-id="next-use-the-parser-package-and-a-lambda-function-to-go-through-each-time-stamp-and-reformat-to-date-and-time-objects.">Next, use the <code>parser</code> package and a lambda function to go through each time stamp and reformat to date and time objects.</h4>
-<div id="cell-55" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a lambda function to use the parser packgage to convert each time stamp to a datetime object</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>towerData[<span class="st">"Date/Time"</span>] <span class="op">=</span> towerData[<span class="st">"Time"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: parser.parse(x))</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>towerData[<span class="st">"Time"</span>] <span class="op">=</span> towerData[<span class="st">"Date/Time"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: datetime.time(x.hour, x.minute))</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>towerData <span class="op">=</span> towerData[[<span class="st">"Date/Time"</span>, <span class="st">"Time"</span>, <span class="st">"LE"</span>]]</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>towerData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Date/Time</th>
-<th data-quarto-table-cell-role="th">Time</th>
-<th data-quarto-table-cell-role="th">LE</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>2018-08-05 09:30:00</td>
-<td>09:30:00</td>
-<td>18.027752</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>2018-08-05 10:00:00</td>
-<td>10:00:00</td>
-<td>68.495970</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">5</td>
-<td>2018-08-05 10:30:00</td>
-<td>10:30:00</td>
-<td>89.050031</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>2018-08-05 11:00:00</td>
-<td>11:00:00</td>
-<td>154.564199</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">9</td>
-<td>2018-08-05 11:30:00</td>
-<td>11:30:00</td>
-<td>118.685090</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">11</td>
-<td>2018-08-05 12:00:00</td>
-<td>12:00:00</td>
-<td>107.071870</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">13</td>
-<td>2018-08-05 12:30:00</td>
-<td>12:30:00</td>
-<td>189.551249</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">15</td>
-<td>2018-08-05 13:00:00</td>
-<td>13:00:00</td>
-<td>129.985112</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">19</td>
-<td>2018-08-05 14:00:00</td>
-<td>14:00:00</td>
-<td>139.651745</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">21</td>
-<td>2018-08-05 14:30:00</td>
-<td>14:30:00</td>
-<td>155.416112</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">23</td>
-<td>2018-08-05 15:00:00</td>
-<td>15:00:00</td>
-<td>124.511936</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">25</td>
-<td>2018-08-05 15:30:00</td>
-<td>15:30:00</td>
-<td>106.666146</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">27</td>
-<td>2018-08-05 16:00:00</td>
-<td>16:00:00</td>
-<td>176.321112</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">29</td>
-<td>2018-08-05 16:30:00</td>
-<td>16:30:00</td>
-<td>203.363058</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">31</td>
-<td>2018-08-05 17:00:00</td>
-<td>17:00:00</td>
-<td>166.714904</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">33</td>
-<td>2018-08-05 17:30:00</td>
-<td>17:30:00</td>
-<td>124.236028</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">35</td>
-<td>2018-08-05 18:00:00</td>
-<td>18:00:00</td>
-<td>96.232450</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">37</td>
-<td>2018-08-05 18:30:00</td>
-<td>18:30:00</td>
-<td>133.121365</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">39</td>
-<td>2018-08-05 19:00:00</td>
-<td>19:00:00</td>
-<td>44.660266</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">41</td>
-<td>2018-08-05 19:30:00</td>
-<td>19:30:00</td>
-<td>11.618052</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">43</td>
-<td>2018-08-05 20:00:00</td>
-<td>20:00:00</td>
-<td>44.201492</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
+<div id="cell-55" class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a lambda function to use the parser packgage to convert each time stamp to a datetime object</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>towerData[<span class="st">"Date/Time"</span>] <span class="op">=</span> towerData[<span class="st">"Time"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: parser.parse(x))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>towerData[<span class="st">"Time"</span>] <span class="op">=</span> towerData[<span class="st">"Date/Time"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: datetime.time(x.hour, x.minute))</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>towerData <span class="op">=</span> towerData[[<span class="st">"Date/Time"</span>, <span class="st">"Time"</span>, <span class="st">"LE"</span>]]</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>towerData</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -986,18 +763,15 @@ output file:
 <h2 class="anchored" data-anchor-id="b.-locate-ecostress-pixel-from-latlon-coordinates">5b. Locate ECOSTRESS Pixel from Lat/Lon Coordinates</h2>
 <section id="calculate-the-gridded-pixel-nearest-to-the-tower-location." class="level4">
 <h4 class="anchored" data-anchor-id="calculate-the-gridded-pixel-nearest-to-the-tower-location.">Calculate the gridded pixel nearest to the tower location.</h4>
-<div id="cell-57" class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>towerLat, towerLon <span class="op">=</span> <span class="fl">37.0674</span>, <span class="op">-</span><span class="fl">119.1951</span>  <span class="co"># AmeriFlux US-CZ3 tower location</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate tower lat/lon distance from upper left corner, then divide by pixel size to find x,y pixel location</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>Tcol <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((towerLon <span class="op">-</span> gt[<span class="dv">0</span>]) <span class="op">/</span> gt[<span class="dv">1</span>]))</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>Trow <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((towerLat <span class="op">-</span> gt[<span class="dv">3</span>]) <span class="op">/</span> gt[<span class="dv">5</span>]))</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print ET at the tower location</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>ETgeo[Trow, Tcol]                               </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
-<pre><code>np.float64(172.5819549560547)</code></pre>
-</div>
+<div id="cell-57" class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>towerLat, towerLon <span class="op">=</span> <span class="fl">37.0674</span>, <span class="op">-</span><span class="fl">119.1951</span>  <span class="co"># AmeriFlux US-CZ3 tower location</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate tower lat/lon distance from upper left corner, then divide by pixel size to find x,y pixel location</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>Tcol <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((towerLon <span class="op">-</span> gt[<span class="dv">0</span>]) <span class="op">/</span> gt[<span class="dv">1</span>]))</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>Trow <span class="op">=</span> <span class="bu">int</span>(<span class="bu">round</span>((towerLat <span class="op">-</span> gt[<span class="dv">3</span>]) <span class="op">/</span> gt[<span class="dv">5</span>]))</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print ET at the tower location</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>ETgeo[Trow, Tcol]                               </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <h1>
@@ -1014,10 +788,10 @@ output file:
 <h2 class="anchored" data-anchor-id="a.-create-a-colormap">6a. Create a Colormap</h2>
 <section id="before-plotting-the-et-data-set-up-an-evapotranspiration-color-map-using-linearsegmentedcolormap-from-the-matplotlib-package." class="level4">
 <h4 class="anchored" data-anchor-id="before-plotting-the-et-data-set-up-an-evapotranspiration-color-map-using-linearsegmentedcolormap-from-the-matplotlib-package.">Before plotting the ET data, set up an Evapotranspiration color map using <code>LinearSegmentedColormap</code> from the <code>matplotlib</code> package.</h4>
-<div id="cell-59" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a colormap for the ET data</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>ETcolors <span class="op">=</span> [<span class="st">"#f6e8c3"</span>, <span class="st">"#d8b365"</span>, <span class="st">"#99974a"</span>, <span class="st">"#53792d"</span>, <span class="st">"#6bdfd2"</span>, <span class="st">"#1839c5"</span>]</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>ETcmap <span class="op">=</span> LinearSegmentedColormap.from_list(<span class="st">"ET"</span>, ETcolors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-59" class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a colormap for the ET data</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>ETcolors <span class="op">=</span> [<span class="st">"#f6e8c3"</span>, <span class="st">"#d8b365"</span>, <span class="st">"#99974a"</span>, <span class="st">"#53792d"</span>, <span class="st">"#6bdfd2"</span>, <span class="st">"#1839c5"</span>]</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>ETcmap <span class="op">=</span> LinearSegmentedColormap.from_list(<span class="st">"ET"</span>, ETcolors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1026,22 +800,19 @@ output file:
 <h2 class="anchored" data-anchor-id="b.-calculate-local-overpass-time">6b. Calculate Local Overpass Time</h2>
 <section id="ecostress-observation-times-are-reported-in-universal-time-coordinated-utc.-below-grab-the-observation-time-from-the-filename-and-convert-to-local-time-using-the-longitude-location-of-the-tower." class="level4">
 <h4 class="anchored" data-anchor-id="ecostress-observation-times-are-reported-in-universal-time-coordinated-utc.-below-grab-the-observation-time-from-the-filename-and-convert-to-local-time-using-the-longitude-location-of-the-tower.">ECOSTRESS observation times are reported in Universal Time Coordinated (UTC). Below, grab the observation time from the filename and convert to local time using the longitude location of the tower.</h4>
-<div id="cell-61" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grab UTC time of observation from file name</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>ecoTime <span class="op">=</span> ecoName.split(<span class="st">'_'</span>)[<span class="op">-</span><span class="dv">3</span>]</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>ecoTime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="41">
-<pre><code>'20180805T220314'</code></pre>
-</div>
+<div id="cell-61" class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grab UTC time of observation from file name</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>ecoTime <span class="op">=</span> ecoName.split(<span class="st">'_'</span>)[<span class="op">-</span><span class="dv">3</span>]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>ecoTime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="next-convert-utc-observation-time-to-local-overpass-time." class="level4">
 <h4 class="anchored" data-anchor-id="next-convert-utc-observation-time-to-local-overpass-time.">Next, convert UTC observation time to local overpass time.</h4>
-<div id="cell-63" class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>observationTime <span class="op">=</span> parser.parse(ecoTime)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>solarOverpass <span class="op">=</span> observationTime <span class="op">+</span> datetime.timedelta(hours<span class="op">=</span>(np.radians(towerLon) <span class="op">/</span> np.pi <span class="op">*</span> <span class="dv">12</span>))</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>overpass <span class="op">=</span> datetime.time(solarOverpass.hour, solarOverpass.minute)</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>date <span class="op">=</span> observationTime.strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-63" class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>observationTime <span class="op">=</span> parser.parse(ecoTime)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>solarOverpass <span class="op">=</span> observationTime <span class="op">+</span> datetime.timedelta(hours<span class="op">=</span>(np.radians(towerLon) <span class="op">/</span> np.pi <span class="op">*</span> <span class="dv">12</span>))</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>overpass <span class="op">=</span> datetime.time(solarOverpass.hour, solarOverpass.minute)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>date <span class="op">=</span> observationTime.strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1050,24 +821,17 @@ output file:
 <h2 class="anchored" data-anchor-id="c.-plot-et-data">6c. Plot ET Data</h2>
 <section id="in-this-section-begin-by-highlighting-the-functionality-of-the-matplotlib-plotting-package.-first-make-a-plot-of-the-entire-gridded-et-output.-next-zoom-in-on-the-tower-location-and-add-some-additional-parameters-to-the-plot.-finally-export-the-completed-plot-to-an-image-file." class="level4">
 <h4 class="anchored" data-anchor-id="in-this-section-begin-by-highlighting-the-functionality-of-the-matplotlib-plotting-package.-first-make-a-plot-of-the-entire-gridded-et-output.-next-zoom-in-on-the-tower-location-and-add-some-additional-parameters-to-the-plot.-finally-export-the-completed-plot-to-an-image-file.">In this section, begin by highlighting the functionality of the <code>matplotlib</code> plotting package. First, make a plot of the entire gridded ET output. Next, zoom in on the tower location and add some additional parameters to the plot. Finally, export the completed plot to an image file.</h4>
-<div id="cell-65" class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>title <span class="op">=</span> <span class="st">'ECO3ETPTJPL Evapotranspiration'</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>SDSname <span class="op">=</span> ecoSDS[<span class="dv">0</span>].split(<span class="st">"/"</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="fl">9.7</span>,<span class="fl">7.6</span>))                                                       <span class="co"># Set the figure size (x,y)</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f'</span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>ecoSDS[<span class="dv">0</span>]<span class="sc">.</span>split(<span class="st">"/"</span>)[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">)</span><span class="ch">\n</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>overpass<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">22</span>)  <span class="co"># Add title for the plots</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)                                                                           <span class="co"># Remove axes from plot</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> plt.imshow(ETgeo, cmap<span class="op">=</span>ETcmap)<span class="op">;</span>                                                        <span class="co"># Plot array using colormap</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(Tcol, Trow, color<span class="op">=</span><span class="st">"black"</span>, marker<span class="op">=</span><span class="st">'x'</span>)                                        <span class="co"># Plot tower location</span></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a colormap legend</span></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>plt.colorbar(im, orientation<span class="op">=</span><span class="st">'horizontal'</span>, fraction<span class="op">=</span><span class="fl">0.05</span>, pad<span class="op">=</span><span class="fl">0.004</span>, label<span class="op">=</span><span class="ss">f'ET (</span><span class="sc">{</span>units<span class="sc">}</span><span class="ss">)'</span>, shrink<span class="op">=</span><span class="fl">0.6</span>).outline.set_visible(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="ECOSTRESS_Tutorial_files/figure-html/cell-33-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-65" class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>title <span class="op">=</span> <span class="st">'ECO3ETPTJPL Evapotranspiration'</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>SDSname <span class="op">=</span> ecoSDS[<span class="dv">0</span>].split(<span class="st">"/"</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="fl">9.7</span>,<span class="fl">7.6</span>))                                                       <span class="co"># Set the figure size (x,y)</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f'</span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>ecoSDS[<span class="dv">0</span>]<span class="sc">.</span>split(<span class="st">"/"</span>)[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">)</span><span class="ch">\n</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>overpass<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">22</span>)  <span class="co"># Add title for the plots</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)                                                                           <span class="co"># Remove axes from plot</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> plt.imshow(ETgeo, cmap<span class="op">=</span>ETcmap)<span class="op">;</span>                                                        <span class="co"># Plot array using colormap</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(Tcol, Trow, color<span class="op">=</span><span class="st">"black"</span>, marker<span class="op">=</span><span class="st">'x'</span>)                                        <span class="co"># Plot tower location</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a colormap legend</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>plt.colorbar(im, orientation<span class="op">=</span><span class="st">'horizontal'</span>, fraction<span class="op">=</span><span class="fl">0.05</span>, pad<span class="op">=</span><span class="fl">0.004</span>, label<span class="op">=</span><span class="ss">f'ET (</span><span class="sc">{</span>units<span class="sc">}</span><span class="ss">)'</span>, shrink<span class="op">=</span><span class="fl">0.6</span>).outline.set_visible(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1076,39 +840,29 @@ output file:
 <h2 class="anchored" data-anchor-id="d.-exporting-an-image">6d. Exporting an Image</h2>
 <section id="zoom-in-to-get-a-closer-look-at-the-region-surrounding-the-ameriflux-tower-by-creating-a-subset." class="level4">
 <h4 class="anchored" data-anchor-id="zoom-in-to-get-a-closer-look-at-the-region-surrounding-the-ameriflux-tower-by-creating-a-subset.">Zoom in to get a closer look at the region surrounding the AmeriFlux tower by creating a subset.</h4>
-<div id="cell-67" class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a Radius and calculate subset region from flux tower location (row, col)</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">1700</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>ETsubset <span class="op">=</span> ETgeo[(Trow <span class="op">-</span> radius):(Trow <span class="op">+</span> radius <span class="op">+</span> <span class="dv">1</span>), (Tcol <span class="op">-</span> radius):(Tcol <span class="op">+</span> radius <span class="op">+</span> <span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-67" class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a Radius and calculate subset region from flux tower location (row, col)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">1700</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>ETsubset <span class="op">=</span> ETgeo[(Trow <span class="op">-</span> radius):(Trow <span class="op">+</span> radius <span class="op">+</span> <span class="dv">1</span>), (Tcol <span class="op">-</span> radius):(Tcol <span class="op">+</span> radius <span class="op">+</span> <span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="make-another-plot-this-time-zoomed-in-to-the-tower-location.-export-the-plot-as-a-.png-file." class="level4">
 <h4 class="anchored" data-anchor-id="make-another-plot-this-time-zoomed-in-to-the-tower-location.-export-the-plot-as-a-.png-file.">Make another plot, this time zoomed in to the tower location. Export the plot as a .png file.</h4>
-<div id="cell-69" class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>,<span class="dv">12</span>))                                                 <span class="co"># Set the figure size (x,y)</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f'</span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>SDSname<span class="sc">}</span><span class="ss">)</span><span class="ch">\n</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>overpass<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">26</span>)           <span class="co"># Add title for the plots</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)                                                                   <span class="co"># Remove axes from plot</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> plt.imshow(ETsubset, cmap<span class="op">=</span>ETcmap)<span class="op">;</span>                                             <span class="co"># Plot array using colormap</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>plt.scatter(ETsubset.shape[<span class="dv">0</span>]<span class="op">/</span><span class="dv">2</span>, ETsubset.shape[<span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">"black"</span>, marker<span class="op">=</span><span class="st">'x'</span>)  <span class="co"># Tower is in middle of subset</span></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a colormap legend</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>plt.colorbar(im, orientation<span class="op">=</span><span class="st">'horizontal'</span>, fraction<span class="op">=</span><span class="fl">0.05</span>, pad<span class="op">=</span><span class="fl">0.004</span>, label<span class="op">=</span><span class="ss">f'ET (</span><span class="sc">{</span>units<span class="sc">}</span><span class="ss">)'</span>, shrink<span class="op">=</span><span class="fl">0.6</span>).outline.set_visible(<span class="va">True</span>)</span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up file name and export to png file</span></span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>figure_filename <span class="op">=</span> join(outDir, <span class="st">"</span><span class="sc">{}</span><span class="st">_</span><span class="sc">{}</span><span class="st">.png"</span>.<span class="bu">format</span>(ecoName, SDSname))</span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"figure filename: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(figure_filename))</span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>fig.savefig(figure_filename, dpi<span class="op">=</span><span class="dv">300</span>)</span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>figure filename: ..\output\ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04_ETinst.png</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="ECOSTRESS_Tutorial_files/figure-html/cell-35-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-69" class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>,<span class="dv">12</span>))                                                 <span class="co"># Set the figure size (x,y)</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="ss">f'</span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>SDSname<span class="sc">}</span><span class="ss">)</span><span class="ch">\n</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>overpass<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">26</span>)           <span class="co"># Add title for the plots</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)                                                                   <span class="co"># Remove axes from plot</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> plt.imshow(ETsubset, cmap<span class="op">=</span>ETcmap)<span class="op">;</span>                                             <span class="co"># Plot array using colormap</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>plt.scatter(ETsubset.shape[<span class="dv">0</span>]<span class="op">/</span><span class="dv">2</span>, ETsubset.shape[<span class="dv">1</span>]<span class="op">/</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">"black"</span>, marker<span class="op">=</span><span class="st">'x'</span>)  <span class="co"># Tower is in middle of subset</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a colormap legend</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>plt.colorbar(im, orientation<span class="op">=</span><span class="st">'horizontal'</span>, fraction<span class="op">=</span><span class="fl">0.05</span>, pad<span class="op">=</span><span class="fl">0.004</span>, label<span class="op">=</span><span class="ss">f'ET (</span><span class="sc">{</span>units<span class="sc">}</span><span class="ss">)'</span>, shrink<span class="op">=</span><span class="fl">0.6</span>).outline.set_visible(<span class="va">True</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up file name and export to png file</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>figure_filename <span class="op">=</span> join(outDir, <span class="st">"</span><span class="sc">{}</span><span class="st">_</span><span class="sc">{}</span><span class="st">.png"</span>.<span class="bu">format</span>(ecoName, SDSname))</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"figure filename: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(figure_filename))</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>fig.savefig(figure_filename, dpi<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <h1>
@@ -1125,43 +879,27 @@ output file:
 <h2 class="anchored" data-anchor-id="a.-calculate-distribution-of-ecostress-data">7a. Calculate Distribution of ECOSTRESS Data</h2>
 <section id="first-collect-a-3x3-grid-centered-on-the-flux-tower-pixel-as-a-subset-to-calculate-statistics-on." class="level4">
 <h4 class="anchored" data-anchor-id="first-collect-a-3x3-grid-centered-on-the-flux-tower-pixel-as-a-subset-to-calculate-statistics-on.">First, collect a 3x3 grid centered on the flux tower pixel as a subset to calculate statistics on.</h4>
-<div id="cell-71" class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset data to 3x3 grid surrounding flux tower for both layers</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>ETfootprint <span class="op">=</span> ETgeo[(Trow <span class="op">-</span> <span class="dv">1</span>):(Trow <span class="op">+</span> <span class="dv">2</span>), (Tcol <span class="op">-</span> <span class="dv">1</span>):(Tcol <span class="op">+</span> <span class="dv">2</span>)] </span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>UNfootprint <span class="op">=</span> UNgeo[(Trow <span class="op">-</span> <span class="dv">1</span>):(Trow <span class="op">+</span> <span class="dv">2</span>), (Tcol <span class="op">-</span> <span class="dv">1</span>):(Tcol <span class="op">+</span> <span class="dv">2</span>)] </span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ETfootprint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[161.3531036376953 161.25172424316406 145.38726806640625]
- [156.7587432861328 172.5819549560547 172.5819549560547]
- [140.9962158203125 140.9962158203125 185.904052734375]]</code></pre>
-</div>
+<div id="cell-71" class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset data to 3x3 grid surrounding flux tower for both layers</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>ETfootprint <span class="op">=</span> ETgeo[(Trow <span class="op">-</span> <span class="dv">1</span>):(Trow <span class="op">+</span> <span class="dv">2</span>), (Tcol <span class="op">-</span> <span class="dv">1</span>):(Tcol <span class="op">+</span> <span class="dv">2</span>)] </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>UNfootprint <span class="op">=</span> UNgeo[(Trow <span class="op">-</span> <span class="dv">1</span>):(Trow <span class="op">+</span> <span class="dv">2</span>), (Tcol <span class="op">-</span> <span class="dv">1</span>):(Tcol <span class="op">+</span> <span class="dv">2</span>)] </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ETfootprint)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="in-case-the-3x3-grid-contains-missing-values-use-np.nanmedian-to-ignoring-missing-values-and-calculate-the-measure-of-central-tendency." class="level4">
 <h4 class="anchored" data-anchor-id="in-case-the-3x3-grid-contains-missing-values-use-np.nanmedian-to-ignoring-missing-values-and-calculate-the-measure-of-central-tendency.">In case the 3x3 grid contains missing values, use <code>np.nanmedian</code> to ignoring missing values and calculate the measure of central tendency.</h4>
-<div id="cell-73" class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>ETmedian <span class="op">=</span> np.nanmedian(ETfootprint)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>UNmedian <span class="op">=</span> np.nanmedian(UNfootprint)</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Median ET: </span><span class="sc">{</span>ETmedian<span class="sc">:0.3f}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss">Uncertainty: </span><span class="sc">{</span>UNmedian<span class="sc">:0.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Median ET: 161.252 
-Uncertainty: 95.294</code></pre>
-</div>
+<div id="cell-73" class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ETmedian <span class="op">=</span> np.nanmedian(ETfootprint)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>UNmedian <span class="op">=</span> np.nanmedian(UNfootprint)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Median ET: </span><span class="sc">{</span>ETmedian<span class="sc">:0.3f}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss">Uncertainty: </span><span class="sc">{</span>UNmedian<span class="sc">:0.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="next-generate-a-probability-density-function-for-the-3x3-grid-of-et-values." class="level4">
 <h4 class="anchored" data-anchor-id="next-generate-a-probability-density-function-for-the-3x3-grid-of-et-values.">Next, generate a probability density function for the 3x3 grid of ET values.</h4>
-<div id="cell-75" class="cell" data-execution_count="48">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame({title: ETfootprint.flatten()}).plot.kde()                                   <span class="co"># Pandas Kernel Density Estimate</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f'Probability Density of </span><span class="sc">{</span>SDSname<span class="sc">}</span><span class="ss"> Surrounding US-CZ3</span><span class="ch">\n</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>overpass<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span>  <span class="co"># Title</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="ss">f'</span><span class="sc">{</span>SDSname<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>units<span class="sc">}</span><span class="ss">)'</span>)<span class="op">;</span>                                                       <span class="co"># X-axis label</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="ECOSTRESS_Tutorial_files/figure-html/cell-38-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-75" class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame({title: ETfootprint.flatten()}).plot.kde()                                   <span class="co"># Pandas Kernel Density Estimate</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f'Probability Density of </span><span class="sc">{</span>SDSname<span class="sc">}</span><span class="ss"> Surrounding US-CZ3</span><span class="ch">\n</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>overpass<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span>  <span class="co"># Title</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="ss">f'</span><span class="sc">{</span>SDSname<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>units<span class="sc">}</span><span class="ss">)'</span>)<span class="op">;</span>                                                       <span class="co"># X-axis label</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -1170,22 +908,15 @@ Uncertainty: 95.294</code></pre>
 <h2 class="anchored" data-anchor-id="b.-visualize-ground-observations">7b. Visualize Ground Observations</h2>
 <section id="next-examine-the-series-of-eddy-covariance-observations-from-the-ameriflux-us-cz3-dataset." class="level4">
 <h4 class="anchored" data-anchor-id="next-examine-the-series-of-eddy-covariance-observations-from-the-ameriflux-us-cz3-dataset.">Next, examine the series of eddy covariance observations from the AmeriFlux US-CZ3 dataset.</h4>
-<div id="cell-77" class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">7</span>))                                                                      <span class="co"># Set fig size (x,y)</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>)                                                                             <span class="co"># Create a subplot</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>ax.plot(towerData[<span class="st">'Date/Time'</span>], towerData.LE, <span class="st">'k'</span>, lw<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">'black'</span>)                                     <span class="co"># Plot as a black line</span></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f'Time Series of Eddy Covariance Data at Site US-CZ3'</span>, fontsize<span class="op">=</span><span class="dv">20</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)<span class="op">;</span>  <span class="co"># Set Title</span></span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Latent Heat (W/m^2)'</span>, fontsize<span class="op">=</span><span class="dv">18</span>)<span class="op">;</span>                                                    <span class="co"># Y-axis label</span></span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="ss">f'Time of Day (</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss">)'</span>, fontsize<span class="op">=</span><span class="dv">18</span>)<span class="op">;</span>                                                  <span class="co"># X-axis label</span></span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(towerData[<span class="st">'Date/Time'</span>])<span class="op">;</span>                                                              <span class="co"># Set the x ticks</span></span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(towerData[<span class="st">'Time'</span>], rotation<span class="op">=</span><span class="dv">45</span>,fontsize<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span>                                          <span class="co"># Set x tick labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="ECOSTRESS_Tutorial_files/figure-html/cell-39-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-77" class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">7</span>))                                                                      <span class="co"># Set fig size (x,y)</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>)                                                                             <span class="co"># Create a subplot</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>ax.plot(towerData[<span class="st">'Date/Time'</span>], towerData.LE, <span class="st">'k'</span>, lw<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">'black'</span>)                                     <span class="co"># Plot as a black line</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f'Time Series of Eddy Covariance Data at Site US-CZ3'</span>, fontsize<span class="op">=</span><span class="dv">20</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)<span class="op">;</span>  <span class="co"># Set Title</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Latent Heat (W/m^2)'</span>, fontsize<span class="op">=</span><span class="dv">18</span>)<span class="op">;</span>                                                    <span class="co"># Y-axis label</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="ss">f'Time of Day (</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss">)'</span>, fontsize<span class="op">=</span><span class="dv">18</span>)<span class="op">;</span>                                                  <span class="co"># X-axis label</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(towerData[<span class="st">'Date/Time'</span>])<span class="op">;</span>                                                              <span class="co"># Set the x ticks</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(towerData[<span class="st">'Time'</span>], rotation<span class="op">=</span><span class="dv">45</span>,fontsize<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span>                                          <span class="co"># Set x tick labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="above-we-can-see-the-daily-range-in-latent-heat-as-captured-by-the-eddy-covariance-observations-on-the-flux-tower." class="level4">
@@ -1197,37 +928,27 @@ Uncertainty: 95.294</code></pre>
 <h2 class="anchored" data-anchor-id="c.-combine-ecostress-and-ground-observations">7c. Combine ECOSTRESS and Ground Observations</h2>
 <section id="finally-compare-the-ecostress-evapotranspiration-and-uncertainty-with-the-time-series-of-observations-from-the-flux-tower." class="level4">
 <h4 class="anchored" data-anchor-id="finally-compare-the-ecostress-evapotranspiration-and-uncertainty-with-the-time-series-of-observations-from-the-flux-tower.">Finally, compare the ECOSTRESS Evapotranspiration and uncertainty with the time series of observations from the flux tower.</h4>
-<div id="cell-80" class="cell" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the figure size, create a subplot</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>)</span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the flux tower observatisons followed by the ecostress median ET and median uncertainty</span></span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>ax.plot(towerData[<span class="st">'Date/Time'</span>], towerData.LE, <span class="st">'k'</span>, lw<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>ax.plot(solarOverpass, ETmedian, <span class="st">'bo'</span>, ms<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'darkgreen'</span>)</span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>ax.errorbar(solarOverpass, ETmedian, yerr<span class="op">=</span>UNmedian, lw<span class="op">=</span><span class="fl">2.0</span>, c<span class="op">=</span><span class="st">'lightgreen'</span>, fmt<span class="op">=</span><span class="st">'o'</span>, capsize<span class="op">=</span><span class="dv">3</span>, capthick<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x/y axes and labels</span></span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="ss">f'Time of Day (</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss">)'</span>, fontsize<span class="op">=</span><span class="dv">18</span>)<span class="op">;</span></span>
-<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(towerData[<span class="st">'Date/Time'</span>])<span class="op">;</span></span>
-<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(towerData.Time, rotation<span class="op">=</span><span class="dv">45</span>,fontsize<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span></span>
-<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Latent Heat Flux (Wm2)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
-<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a title and export figure as png file</span></span>
-<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"Time Series of Eddy Covariance Data at Site US-CZ3</span><span class="ch">\n</span><span class="ss"> vs. </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>SDSname<span class="sc">}</span><span class="ss">)"</span>, fontsize<span class="op">=</span><span class="dv">22</span>)</span>
-<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>figure_filename <span class="op">=</span> join(outDir, <span class="st">"</span><span class="sc">{}</span><span class="st">_</span><span class="sc">{}</span><span class="st">_vs_fluxtower.png"</span>.<span class="bu">format</span>(ecoName, SDSname))</span>
-<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"figure filename: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(figure_filename))</span>
-<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>fig.savefig(figure_filename, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>figure filename: ..\output\ECOSTRESS_L3_ET_PT-JPL_00468_007_20180805T220314_0601_04_ETinst_vs_fluxtower.png</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="ECOSTRESS_Tutorial_files/figure-html/cell-40-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-80" class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the figure size, create a subplot</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the flux tower observatisons followed by the ecostress median ET and median uncertainty</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>ax.plot(towerData[<span class="st">'Date/Time'</span>], towerData.LE, <span class="st">'k'</span>, lw<span class="op">=</span><span class="fl">2.5</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>ax.plot(solarOverpass, ETmedian, <span class="st">'bo'</span>, ms<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'darkgreen'</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>ax.errorbar(solarOverpass, ETmedian, yerr<span class="op">=</span>UNmedian, lw<span class="op">=</span><span class="fl">2.0</span>, c<span class="op">=</span><span class="st">'lightgreen'</span>, fmt<span class="op">=</span><span class="st">'o'</span>, capsize<span class="op">=</span><span class="dv">3</span>, capthick<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x/y axes and labels</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="ss">f'Time of Day (</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss">)'</span>, fontsize<span class="op">=</span><span class="dv">18</span>)<span class="op">;</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(towerData[<span class="st">'Date/Time'</span>])<span class="op">;</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(towerData.Time, rotation<span class="op">=</span><span class="dv">45</span>,fontsize<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Latent Heat Flux (Wm2)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a title and export figure as png file</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="ss">f"Time Series of Eddy Covariance Data at Site US-CZ3</span><span class="ch">\n</span><span class="ss"> vs. </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>SDSname<span class="sc">}</span><span class="ss">)"</span>, fontsize<span class="op">=</span><span class="dv">22</span>)</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>figure_filename <span class="op">=</span> join(outDir, <span class="st">"</span><span class="sc">{}</span><span class="st">_</span><span class="sc">{}</span><span class="st">_vs_fluxtower.png"</span>.<span class="bu">format</span>(ecoName, SDSname))</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"figure filename: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(figure_filename))</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>fig.savefig(figure_filename, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>

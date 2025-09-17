@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/welcome.html</loc>
-    <lastmod>2025-09-16T22:05:08.607Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/about.html</loc>
-    <lastmod>2025-09-16T22:05:08.063Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/2025_satm.html</loc>
-    <lastmod>2025-09-16T22:05:06.783Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/CONTRIBUTING.html</loc>
-    <lastmod>2025-09-16T22:04:52.903Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/guides/earthdata_search_ecostress.html</loc>
-    <lastmod>2025-09-16T22:04:53.019Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/scripts/extract_geolocation_flag/geolocation.html</loc>
-    <lastmod>2025-09-16T22:05:08.307Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/how-tos/how_to_direct_access_s3_ecostress_cog.html</loc>
-    <lastmod>2025-09-16T22:05:08.275Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/tutorials/Working_with_ECOSTRESS_Tiled_data.html</loc>
-    <lastmod>2025-09-16T22:05:08.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/tutorials/ECOSTRESS_Tutorial.html</loc>
-    <lastmod>2025-09-16T22:05:08.343Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/tutorials/Work_with_ECOSTRESS_L2T_LSTE_data.html</loc>
-    <lastmod>2025-09-16T22:05:08.355Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/how-tos/how_to_direct_access_http_ecostress_cog.html</loc>
-    <lastmod>2025-09-16T22:05:08.167Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/scripts/ecostress_swath2grid/swath2grid.html</loc>
-    <lastmod>2025-09-16T22:05:08.299Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/guides/appeears_ecostress.html</loc>
-    <lastmod>2025-09-16T22:04:53.015Z</lastmod>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/LICENSE.html</loc>
+    <lastmod>2025-09-17T03:07:34.329Z</lastmod>
   </url>
   <url>
     <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2025-09-16T22:04:52.899Z</lastmod>
+    <lastmod>2025-09-17T03:07:34.317Z</lastmod>
   </url>
   <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/LICENSE.html</loc>
-    <lastmod>2025-09-16T22:04:52.911Z</lastmod>
-  </url>
-  <url>
-    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/CHANGE_LOG.html</loc>
-    <lastmod>2025-09-16T22:05:06.795Z</lastmod>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/2025_satm.html</loc>
+    <lastmod>2025-09-17T03:07:34.305Z</lastmod>
   </url>
   <url>
     <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/setup.html</loc>
-    <lastmod>2025-09-16T22:05:08.591Z</lastmod>
+    <lastmod>2025-09-17T03:07:35.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/guides/earthdata_search_ecostress.html</loc>
+    <lastmod>2025-09-17T03:07:35.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/scripts/extract_geolocation_flag/geolocation.html</loc>
+    <lastmod>2025-09-17T03:07:35.569Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/how-tos/how_to_direct_access_s3_ecostress_cog.html</loc>
+    <lastmod>2025-09-17T03:23:21.986Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/tutorials/Working_with_ECOSTRESS_Tiled_data.html</loc>
+    <lastmod>2025-09-17T03:22:31.958Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/tutorials/ECOSTRESS_Tutorial.html</loc>
+    <lastmod>2025-09-17T03:22:21.054Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/tutorials/Work_with_ECOSTRESS_L2T_LSTE_data.html</loc>
+    <lastmod>2025-09-17T03:22:39.766Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/how-tos/how_to_direct_access_http_ecostress_cog.html</loc>
+    <lastmod>2025-09-17T03:23:02.258Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/python/scripts/ecostress_swath2grid/swath2grid.html</loc>
+    <lastmod>2025-09-17T03:07:35.561Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/guides/appeears_ecostress.html</loc>
+    <lastmod>2025-09-17T03:07:35.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/about.html</loc>
+    <lastmod>2025-09-17T03:07:35.309Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/index.html</loc>
+    <lastmod>2025-09-17T03:07:35.885Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/CHANGE_LOG.html</loc>
+    <lastmod>2025-09-17T03:07:34.309Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nasa.github.io/ECOSTRESS-Data-Resources/CONTRIBUTING.html</loc>
+    <lastmod>2025-09-17T03:07:34.321Z</lastmod>
   </url>
 </urlset>
