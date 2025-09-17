@@ -31,7 +31,7 @@ website:
       - section: "Overview"
         contents:
         - text: "Welcome"
-          href: welcome.qmd
+          href: index.qmd
       - section: "Workshops"
         contents:
         - text: "2025 ECOSTRESS Science and Application Team Meeting"
