@@ -28,7 +28,8 @@ Hands-on exercises will be executed from a [Jupyter Hub on the Openscapes 2i2c c
 - How to evaluate quality of ECOSTESS data 
 
 ## Slides
-<iframe src="https://docs.google.com/presentation/d/10Iynvap7WxmZsLJegFMEBx53I8nT1b3F/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="445" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<iframe src="https://docs.google.com/presentation/d/1CSEez-VPMrejUCdu6ZEJAKbKfV1s6Kun/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="445" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 ## Knowledge & Career Level: 
 Beginner, intermediate
