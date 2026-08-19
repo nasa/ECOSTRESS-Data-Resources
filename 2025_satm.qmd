@@ -1,5 +1,5 @@
 ---
-title: 2025 ECOTRESS Science and Application Team Meeting
+title: ECOTRESS Science and Application Team Meeting
 jupyter:
   jupytext:
     text_representation:
@@ -14,7 +14,7 @@ jupyter:
 ---
    
 
-Welcome to 2025 ECOSTRESS Science and Applications Team Meeting workshop inspired by the [NASA Space Apps Challenge](https://www.spaceappschallenge.org/)! 
+Welcome to ECOSTRESS Science and Applications Team Meeting workshop inspired by the [NASA Space Apps Challenge](https://www.spaceappschallenge.org/)! 
 In this hands-on workshop, you will learn different ways to find, access, and explore ECOSTRESS data. You will also have two hours to create the most compelling ECOSTRESS image or application. The winning submission will be featured on the ECOSTRESS website.
 
 This session is hosted by NASA [Land Processes Distributed Active Archive Center (LP DAAC)](https://lpdaac.usgs.gov/) and [NASA Jet Propulsion Laboratory (JPL)](https://www.jpl.nasa.gov/) with support from the NASA [Openscapes](https://nasa-openscapes.github.io/) project.  
@@ -28,8 +28,13 @@ Hands-on exercises will be executed from a [Jupyter Hub on the Openscapes 2i2c c
 - How to evaluate quality of ECOSTESS data 
 
 ## Slides
+2025 ECOSTRESS Science and Application Team Meeting 
 
 <iframe src="https://docs.google.com/presentation/d/1CSEez-VPMrejUCdu6ZEJAKbKfV1s6Kun/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="445" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+2026 ECOSTRESS Science and Application Team Meeting 
+
+<iframe src="https://docs.google.com/presentation/d/1hcylz5CTwf4TGmKrsYYvjVKk3Gcglq6E/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="445" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 ## Knowledge & Career Level: 
 Beginner, intermediate
